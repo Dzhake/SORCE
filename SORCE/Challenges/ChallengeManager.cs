@@ -14,24 +14,22 @@ namespace SORCE.Challenges
 		private static readonly ManualLogSource logger = SORCELogger.GetLogger();
 		private static GameController GC => GameController.gameController;
 
-		private static readonly Dictionary<Type, ChallengeInfo> registeredChallenges = new Dictionary<Type, ChallengeInfo>();
+		private static readonly Dictionary<Type, ChallengeInfo> registeredChallenges = new();
 
 		public static string GetActiveChallengeFromList(List<string> challengeList) =>
-			challengeList.Where(c => GC.challenges.Contains(c)).FirstOrDefault();
+            challengeList.FirstOrDefault(c => GC.challenges.Contains(c));
 
 		public static Type GetActiveChallengeFromList(List<Type> challengeList) =>
-			challengeList.Where(c => GC.challenges.Contains(nameof(c))).FirstOrDefault();
+            challengeList.FirstOrDefault(c => GC.challenges.Contains(nameof(c)));
 
 		public static ChallengeInfo GetChallengeInfo<ChallengeType>() =>
 			GetChallengeInfo(typeof(ChallengeType));
 
 		public static ChallengeInfo GetChallengeInfo(Type ChallengeType) =>
-			registeredChallenges.ContainsKey(ChallengeType)
-				? registeredChallenges[ChallengeType]
-				: null;
+			registeredChallenges.GetValueOrDefault(ChallengeType);
 
 		public static bool IsChallengeFromListActive(List<string> challengeList) =>
-			challengeList.Where(c => GC.challenges.Contains(c)).Any();
+            challengeList.Any(c => GC.challenges.Contains(c));
 
 		public static T SetCancellations<T>(this T wrapper, IEnumerable<string> cancellations) where T : UnlockWrapper
 		{
