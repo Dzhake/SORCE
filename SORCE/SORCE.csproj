@@ -1,18 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{79CAAD00-E1B7-4937-B2E8-5FC7FE72CB9B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SORCE</RootNamespace>
     <AssemblyName>SORCE</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFramework>net8.0</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
+
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
@@ -22,6 +23,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
@@ -30,6 +32,16 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+
+  <PropertyGroup>
+    <PostBuildEvent>set modDir="N:\Games\Streets of Rogue\BepInEx\plugins"
+      copy /y "SORCE.dll" %25modDir%25
+      copy /y "BTHarmonyUtils.dll" %25modDir%25
+      copy /y "RogueLibsCore.dll" %25modDir%25
+    </PostBuildEvent>
+  </PropertyGroup>
+
+
   <ItemGroup>
     <Reference Include="0Harmony, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -51,15 +63,6 @@
     <Reference Include="RogueLibsCore">
       <HintPath>..\Libraries\RogueLibsCore.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
     <Reference Include="UnityEngine">
       <HintPath>..\Libraries\UnityEngine.dll</HintPath>
     </Reference>
@@ -82,264 +85,16 @@
       <HintPath>..\Libraries\UnityEngine.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
+
   <ItemGroup>
-    <Compile Include="BigQuests\ToiletTourist.cs" />
-    <Compile Include="Challenges\ChallengeController.cs" />
-    <Compile Include="Challenges\ChallengeInfo.cs" />
-    <Compile Include="Challenges\ChallengeManager.cs" />
-    <Compile Include="Challenges\ChallengeMenuGroups.cs" />
-    <Compile Include="Challenges\C_AmbientLightColor\AmbientLightColorChallenge.cs" />
-    <Compile Include="Challenges\C_AmbientLightColor\Reactor.cs" />
-    <Compile Include="Challenges\C_AmbientLightColor\NuclearWinter.cs" />
-    <Compile Include="Challenges\C_AmbientLightColor\Goodsprings.cs" />
-    <Compile Include="Challenges\C_AmbientLightColor\ShadowRealm.cs" />
-    <Compile Include="Challenges\C_AmbientLightColor\Shinobi.cs" />
-    <Compile Include="Challenges\C_AmbientLightColor\Hellscape.cs" />
-    <Compile Include="Challenges\C_AmbientLightLevel\AmbientLightLevelChallenge.cs" />
-    <Compile Include="Challenges\C_AmbientLightLevel\Blinding.cs" />
-    <Compile Include="Challenges\C_AmbientLightLevel\Daytime.cs" />
-    <Compile Include="Challenges\C_AmbientLightLevel\Evening.cs" />
-    <Compile Include="Challenges\C_AmbientLightLevel\FullMoon.cs" />
-    <Compile Include="Challenges\C_AmbientLightLevel\HalfMoon.cs" />
-    <Compile Include="Challenges\C_AmbientLightLevel\NewMoon.cs" />
-    <Compile Include="Challenges\C_AmbientLightColor\Sepia.cs" />
-    <Compile Include="Challenges\C_Audio\AmbienterAmbience.cs" />
-    <Compile Include="Challenges\C_Buildings\BuildingsChallenge.cs" />
-    <Compile Include="Challenges\C_Buildings\Brixton.cs" />
-    <Compile Include="Challenges\C_Buildings\ConcreteJungle.cs" />
-    <Compile Include="Challenges\C_Features\MeatsOfRogue.cs" />
-    <Compile Include="Challenges\C_Features\TrapsUnlimited.cs" />
-    <Compile Include="Challenges\C_Features\PublicScreens.cs" />
-    <Compile Include="Challenges\C_Features\WelcomeMats.cs" />
-    <Compile Include="Challenges\C_Features\VerdantVistas.cs" />
-    <Compile Include="Challenges\C_Gangs\BananaSmugglers.cs" />
-    <Compile Include="Challenges\C_Gangs\ExperimentalExcursion.cs" />
-    <Compile Include="Challenges\C_Gangs\MerchantCaravans.cs" />
-    <Compile Include="Challenges\C_Gangs\HomeTeam.cs" />
-    <Compile Include="Challenges\C_Gangs\TheBluerLine.cs" />
-    <Compile Include="Challenges\C_Gangs\ProfessionalNetwork.cs" />
-    <Compile Include="Challenges\C_Gangs\LunchHour.cs" />
-    <Compile Include="Challenges\C_Gangs\TeamMelvin.cs" />
-    <Compile Include="Challenges\C_Gangs\NotSwearwolves.cs" />
-    <Compile Include="Challenges\C_Gangs\RougherRuffians.cs" />
-    <Compile Include="Challenges\C_Gangs\BURPs.cs" />
-    <Compile Include="Challenges\C_Gangs\HeadHunters.cs" />
-    <Compile Include="Challenges\C_Gangs\BackDraft.cs" />
-    <Compile Include="Challenges\C_Gangs\WeLoveOurJobCreators.cs" />
-    <Compile Include="Challenges\C_Gangs\ProtectAndServo.cs" />
-    <Compile Include="Challenges\C_Gangs\TheBlueLine.cs" />
-    <Compile Include="Challenges\C_Gangs\BandoBrothers.cs" />
-    <Compile Include="Challenges\C_Gangs\CrooklynAve.cs" />
-    <Compile Include="Challenges\C_Gangs\PiruSt.cs" />
-    <Compile Include="Challenges\C_Lighting\AgentsRelit.cs" />
-    <Compile Include="Challenges\C_Lighting\ItemsRelit.cs" />
-    <Compile Include="Challenges\C_Lighting\ObjectsRelit.cs" />
-    <Compile Include="Challenges\C_Lighting\GunplayRelit.cs" />
-    <Compile Include="Challenges\C_MapSize\MapSizeChallenge.cs" />
-    <Compile Include="Challenges\C_Overhaul\Hell.cs" />
-    <Compile Include="Challenges\C_Overhaul\Tindertown.cs" />
-    <Compile Include="Challenges\C_Overhaul\DUMP.cs" />
-    <Compile Include="Challenges\C_Overhaul\GrandCityHotel.cs" />
-    <Compile Include="Challenges\C_Overhaul\MonkeTown.cs" />
-    <Compile Include="Challenges\C_Overhaul\TestTubeCity.cs" />
-    <Compile Include="Challenges\C_Overhaul\Eisburg.cs" />
-    <Compile Include="Challenges\C_Overhaul\CanalCity.cs" />
-    <Compile Include="Challenges\C_Features\DepartmentOfPublicComfiness.cs" />
-    <Compile Include="Challenges\C_Features\ThisLandIsMineLand.cs" />
-    <Compile Include="Challenges\C_Buildings\CityOfSteel.cs" />
-    <Compile Include="Challenges\C_Buildings\GreenLiving.cs" />
-    <Compile Include="Challenges\C_Buildings\Panoptikopolis.cs" />
-    <Compile Include="Challenges\C_Buildings\ShantyTown.cs" />
-    <Compile Include="Challenges\C_Overhaul\LowTechLowLife.cs" />
-    <Compile Include="Challenges\C_Population\PopulationChallenge.cs" />
-    <Compile Include="Challenges\C_Gangs\GangChallenge.cs" />
-    <Compile Include="Challenges\C_Preview\ScaryGunsPreview.cs" />
-    <Compile Include="Challenges\C_VFX\BuggierBulletholes.cs" />
-    <Compile Include="Challenges\C_VFX\DestroyederDestroyage.cs" />
-    <Compile Include="Challenges\C_VFX\ConsumererProducts.cs" />
-    <Compile Include="Challenges\C_VFX\ShootierGuns.cs" />
-    <Compile Include="Challenges\C_VFX\BachelorerPads.cs" />
-    <Compile Include="Challenges\C_VFX\FloralerFlora.cs" />
-    <Compile Include="Challenges\C_VFX\DirtierDistricts.cs" />
-    <Compile Include="Extensions\E_Agent.cs" />
-    <Compile Include="Extensions\E_Enum.cs" />
-    <Compile Include="Extensions\E_PlayfieldObject.cs" />
-    <Compile Include="Extensions\E_TileInfo.cs" />
-    <Compile Include="Localization\CButtonText.cs" />
-    <Compile Include="Localization\CChallenge.cs" />
-    <Compile Include="Localization\CColor.cs" />
-    <Compile Include="Localization\CDialogue.cs" />
-    <Compile Include="Localization\CLevelFeature.cs" />
-    <Compile Include="Localization\COperatingText.cs" />
-    <Compile Include="Challenges\C_Overhaul\Arcology.cs" />
-    <Compile Include="Challenges\C_Features\BroughtbackFountain.cs" />
-    <Compile Include="Challenges\C_Features\CartOfTheDeal.cs" />
-    <Compile Include="Challenges\C_Features\LakeItOrLeaveIt.cs" />
-    <Compile Include="Challenges\C_Features\PowerWhelming.cs" />
-    <Compile Include="Challenges\C_Features\SkywayDistrict.cs" />
-    <Compile Include="Challenges\C_Features\SurveillanceSociety.cs" />
-    <Compile Include="Challenges\C_Features\ThePollutionSolution.cs" />
-    <Compile Include="Challenges\C_Features\BadNeighborhoods.cs" />
-    <Compile Include="Challenges\C_MapSize\Claustropolis.cs" />
-    <Compile Include="Challenges\C_MapSize\Megapolis.cs" />
-    <Compile Include="Challenges\C_MapSize\Ultrapolis.cs" />
-    <Compile Include="Challenges\C_MapSize\Arthropolis.cs" />
-    <Compile Include="Challenges\C_Buildings\SpelunkyDory.cs" />
-    <Compile Include="Challenges\C_Overhaul\Technocracy.cs" />
-    <Compile Include="Challenges\C_Overhaul\PoliceState.cs" />
-    <Compile Include="Challenges\C_Overhaul\MACITS.cs" />
-    <Compile Include="Challenges\C_Overhaul\DiscoCityDanceoff.cs" />
-    <Compile Include="Challenges\C_Overhaul\AnCapistan.cs" />
-    <Compile Include="Challenges\C_Population\HordeAlmighty.cs" />
-    <Compile Include="Challenges\C_Population\LetMeSeeThatThrong.cs" />
-    <Compile Include="Challenges\C_Population\SwarmWelcome.cs" />
-    <Compile Include="Challenges\C_Population\GhostTown.cs" />
-    <Compile Include="Challenges\C_Gangs\UnionTown.cs" />
-    <Compile Include="Localization\CSprite.cs" />
-    <Compile Include="Localization\VParticleEffect.cs" />
-    <Compile Include="Localization\VAgentGoal.cs" />
-    <Compile Include="Localization\VRelationship.cs" />
-    <Compile Include="Localization\VSpecialAbility.cs" />
-    <Compile Include="Patches\P_BrainUpdate.cs" />
-    <Compile Include="Patches\P_ItemFunctions.cs" />
-    <Compile Include="Patches\P_MapGen\P_LoadLevel_FillMapChunks2.cs" />
-    <Compile Include="Patches\P_ObjectPoolExtensions.cs" />
-    <Compile Include="Patches\P_PlayfieldObject\P_KillerPlant.cs" />
-    <Compile Include="Patches\P_PlayfieldObject\P_SlimePuddle.cs" />
-    <Compile Include="Patches\P_PlayfieldObject\P_Tree.cs" />
-    <Compile Include="Patches\P_PlayfieldObject\P_Crate.cs" />
-    <Compile Include="Patches\P_Quests.cs" />
-    <Compile Include="Resources\SpriteLoader.cs" />
-    <Compile Include="Status_Effects\C_Underdank\Soiled.cs" />
-    <Compile Include="Status_Effects\C_Underdank\CleanedOut.cs" />
-    <Compile Include="Traits\UnderdankVIP.cs" />
-    <Compile Include="Utilities\Gunplay.cs" />
-    <Compile Include="Utilities\AmbientAudio.cs" />
-    <Compile Include="Utilities\MapGen\Chunks.cs" />
-    <Compile Include="Utilities\MapGen\LevelGenTools.cs" />
-    <Compile Include="Localization\VAgent.cs" />
-    <Compile Include="Localization\VAmbience.cs" />
-    <Compile Include="Localization\VAnimation.cs" />
-    <Compile Include="Localization\VAudioClip.cs" />
-    <Compile Include="Localization\VButtonText.cs" />
-    <Compile Include="Localization\VGoal.cs" />
-    <Compile Include="Localization\VDialogue.cs" />
-    <Compile Include="Localization\VChallenge.cs" />
-    <Compile Include="Localization\VChunkType.cs" />
-    <Compile Include="Localization\VColor.cs" />
-    <Compile Include="Localization\VExplosion.cs" />
-    <Compile Include="Localization\VFloor.cs" />
-    <Compile Include="Localization\VFloorTileGroup.cs" />
-    <Compile Include="Localization\VItem.cs" />
-    <Compile Include="Localization\VLevelFeature.cs" />
-    <Compile Include="Localization\VLevelFeeling.cs" />
-    <Compile Include="Localization\VNameType.cs" />
-    <Compile Include="Localization\VObject.cs" />
-    <Compile Include="Localization\VStatusEffect.cs" />
-    <Compile Include="Localization\VTrait.cs" />
-    <Compile Include="Localization\VWall.cs" />
-    <Compile Include="Localization\VWallGroup.cs" />
-    <Compile Include="Logging\SORCELogger.cs" />
-    <Compile Include="Utilities\MapGen\MapFeatures.cs" />
-    <Compile Include="Utilities\MapGen\MapFeatureSpawners.cs" />
-    <Compile Include="Utilities\Roamers.cs" />
-    <Compile Include="Utilities\MapGen\Structures.cs" />
-    <Compile Include="Utilities\Wreckage.cs" />
-    <Compile Include="Patches\P_MapGen\P_LoadLevel_SetupMore3_3.cs" />
-    <Compile Include="Patches\P_PlayfieldObject\P_00_PlayfieldObject.cs" />
-    <Compile Include="Patches\P_PlayfieldObject\P_AlarmButton.cs" />
-    <Compile Include="Patches\P_PlayfieldObject\P_Bullet.cs" />
-    <Compile Include="Patches\P_PlayfieldObject\P_Elevator.cs" />
-    <Compile Include="Patches\P_PlayfieldObject\P_FireHydrant.cs" />
-    <Compile Include="Patches\P_PlayfieldObject\P_FlameGrate.cs" />
-    <Compile Include="Patches\P_PlayfieldObject\P_Fountain.cs" />
-    <Compile Include="Patches\P_PlayfieldObject\P_Gun.cs" />
-    <Compile Include="Patches\P_PlayfieldObject\P_Hole.cs" />
-    <Compile Include="Patches\P_PlayfieldObject\P_Lamp.cs" />
-    <Compile Include="Patches\P_PlayfieldObject\P_Manhole.cs" />
-    <Compile Include="Patches\P_BasicFloor.cs" />
-    <Compile Include="Patches\P_BasicWall.cs" />
-    <Compile Include="Patches\P_MapGen\P_LoadLevel.cs" />
-    <Compile Include="Patches\P_PlayfieldObject\P_00_ObjectReal.cs" />
-    <Compile Include="Patches\P_PlayfieldObject\P_Pipe.cs" />
-    <Compile Include="Patches\P_PlayfieldObject\P_Sawblade.cs" />
-    <Compile Include="Patches\P_PlayfieldObject\P_SecurityCam.cs" />
-    <Compile Include="Patches\P_PlayfieldObject\P_SlimeBarrel.cs" />
-    <Compile Include="Patches\P_PlayfieldObject\P_Stove.cs" />
-    <Compile Include="Patches\P_PlayfieldObject\P_SwitchFloor.cs" />
-    <Compile Include="Patches\P_PlayfieldObject\P_Toilet.cs" />
-    <Compile Include="Patches\P_PlayfieldObject\P_Tube.cs" />
-    <Compile Include="Patches\P_PlayfieldObject\P_Turret.cs" />
-    <Compile Include="Patches\P_PlayfieldObject\P_Water.cs" />
-    <Compile Include="Patches\P_PoolsScene.cs" />
-    <Compile Include="Patches\P_RandomSelection.cs" />
-    <Compile Include="Patches\P_RandomWalls.cs" />
-    <Compile Include="Patches\P_Relationships.cs" />
-    <Compile Include="Patches\P_ScrollingMenu.cs" />
-    <Compile Include="Patches\P_SpawnerFloor.cs" />
-    <Compile Include="Patches\P_SpawnerMain.cs" />
-    <Compile Include="Patches\P_StatusEffects.cs" />
-    <Compile Include="Patches\P_TileInfo.cs" />
-    <Compile Include="Properties\ModInfo.cs" />
-    <Compile Include="Core.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
+    <Compile Update="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Traits\TraitManager.cs" />
-    <Compile Include="Traits\UnderdankCitizen.cs" />
-    <Compile Include="Utilities\MapGen\LevelSize.cs" />
-    <Compile Include="Utilities\Underdank.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Images\Screenshots\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Documentation\2.0. Features.md" />
-    <None Include="Documentation\1.0. Installation.md" />
-    <None Include="packages.config" />
-    <None Include="Resources\BeerCan1.bin" />
-    <None Include="Resources\BeerCan2.bin" />
-    <None Include="Resources\BeerCan3.bin" />
-    <None Include="Resources\BeerCan4.bin" />
-    <None Include="Resources\BeerCan5.bin" />
-    <None Include="Resources\BulletHole.bin" />
-    <None Include="Resources\BulletHoleGlass.bin" />
-    <None Include="Resources\Casing.bin" />
-    <None Include="Resources\CigaretteButt1.bin" />
-    <None Include="Resources\CigaretteButt2.bin" />
-    <None Include="Resources\CigaretteButt3.bin" />
-    <None Include="Resources\CigaretteButt4.bin" />
-    <None Include="Resources\CigaretteButt5.bin" />
-    <None Include="Resources\FudJar.bin" />
-    <None Include="Resources\FudLid.bin" />
-    <None Include="Resources\Hypo1.bin" />
-    <None Include="Resources\Hypo2.bin" />
-    <None Include="Resources\Hypo3.bin" />
-    <None Include="Resources\Hypo4.bin" />
-    <None Include="Resources\Hypo5.bin" />
-    <None Include="Resources\RifleCasing.bin" />
-    <None Include="Resources\ShotgunShell.bin" />
-    <None Include="Resources\WhiskeyBottle.bin" />
-    <None Include="Scratchpad.md" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Hosted\UnityEngine.Networking.dll" />
-    <Content Include="Images\SORCE_64x64.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Properties\Resources.resx">
+    <EmbeddedResource Update="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PostBuildEvent>set modDir="N:\Games\Streets of Rogue\BepInEx\plugins"
-copy /y "SORCE.dll" %25modDir%25
-copy /y "BTHarmonyUtils.dll" %25modDir%25
-copy /y "RogueLibsCore.dll" %25modDir%25</PostBuildEvent>
-  </PropertyGroup>
 </Project>
