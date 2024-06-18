@@ -84,6 +84,573 @@
               <para>Specifies all debug flags. Expect a giant wall of constantly flowing text.</para>
             </summary>
         </member>
+        <member name="T:RogueLibsCore.DisasterInfo">
+            <summary>
+              <para>Represents the <see cref="T:RogueLibsCore.CustomDisaster"/> type metadata.</para>
+            </summary>
+        </member>
+        <member name="P:RogueLibsCore.DisasterInfo.Name">
+            <summary>
+              <para>Gets the custom disaster's name.</para>
+            </summary>
+        </member>
+        <member name="M:RogueLibsCore.DisasterInfo.GetName">
+            <summary>
+              <para>Returns a <see cref="T:RogueLibsCore.CustomName"/> associated with this disaster's name.</para>
+            </summary>
+            <returns>The <see cref="T:RogueLibsCore.CustomName"/> associated with this disaster's name, if found; otherwise, <see langword="null"/>.</returns>
+        </member>
+        <member name="M:RogueLibsCore.DisasterInfo.GetDescription">
+            <summary>
+              <para>Returns a <see cref="T:RogueLibsCore.CustomName"/> associated with this disaster's description.</para>
+            </summary>
+            <returns>The <see cref="T:RogueLibsCore.CustomName"/> associated with this disaster's description, if found; otherwise, <see langword="null"/>.</returns>
+        </member>
+        <member name="M:RogueLibsCore.DisasterInfo.GetMessage1">
+            <summary>
+              <para>Returns a <see cref="T:RogueLibsCore.CustomName"/> associated with this disaster's first message.</para>
+            </summary>
+            <returns>The <see cref="T:RogueLibsCore.CustomName"/> associated with this disaster's first message, if found; otherwise, <see langword="null"/>.</returns>
+        </member>
+        <member name="M:RogueLibsCore.DisasterInfo.GetMessage2">
+            <summary>
+              <para>Returns a <see cref="T:RogueLibsCore.CustomName"/> associated with this disaster's second message.</para>
+            </summary>
+            <returns>The <see cref="T:RogueLibsCore.CustomName"/> associated with this disaster's second message, if found; otherwise, <see langword="null"/>.</returns>
+        </member>
+        <member name="M:RogueLibsCore.DisasterInfo.Get(System.Type)">
+            <summary>
+              <para>Gets the specified <see cref="T:RogueLibsCore.CustomDisaster"/> <paramref name="type"/>'s metadata.</para>
+            </summary>
+            <param name="type">The <see cref="T:RogueLibsCore.CustomDisaster"/> type to get the metadata for.</param>
+            <returns>The specified <paramref name="type"/>'s metadata.</returns>
+            <exception cref="T:System.ArgumentException"><paramref name="type"/> is not a <see cref="T:RogueLibsCore.CustomDisaster"/>.</exception>
+        </member>
+        <member name="M:RogueLibsCore.DisasterInfo.Get``1">
+            <summary>
+              <para>Gets the specified <typeparamref name="TDisaster"/>'s metadata.</para>
+            </summary>
+            <typeparam name="TDisaster">The <see cref="T:RogueLibsCore.CustomDisaster"/> type get the metadata for.</typeparam>
+            <returns>The specified <typeparamref name="TDisaster"/>'s metadata.</returns>
+        </member>
+        <member name="T:RogueLibsCore.EffectInfo">
+            <summary>
+              <para>Represents the <see cref="T:RogueLibsCore.CustomEffect"/> type metadata.</para>
+            </summary>
+        </member>
+        <member name="P:RogueLibsCore.EffectInfo.Name">
+            <summary>
+              <para>Gets the custom effect's name.</para>
+            </summary>
+        </member>
+        <member name="P:RogueLibsCore.EffectInfo.Limitations">
+            <summary>
+              <para>Gets the custom effect's limitations flags.</para>
+            </summary>
+        </member>
+        <member name="P:RogueLibsCore.EffectInfo.RemoveOnDeath">
+            <summary>
+              <para>Determines whether the status effect is removed on death.</para>
+            </summary>
+        </member>
+        <member name="P:RogueLibsCore.EffectInfo.RemoveOnKnockOut">
+            <summary>
+              <para>Determines whether the status effect is removed on knockout.</para>
+            </summary>
+        </member>
+        <member name="P:RogueLibsCore.EffectInfo.RemoveOnNextLevel">
+            <summary>
+              <para>Determines whether the status effect is removed between levels.</para>
+            </summary>
+        </member>
+        <member name="M:RogueLibsCore.EffectInfo.GetName">
+            <summary>
+              <para>Returns a <see cref="T:RogueLibsCore.CustomName"/> associated with this effect's name.</para>
+            </summary>
+            <returns>The <see cref="T:RogueLibsCore.CustomName"/> associated with this effect's name, if found; otherwise, <see langword="null"/>.</returns>
+        </member>
+        <member name="M:RogueLibsCore.EffectInfo.GetDescription">
+            <summary>
+              <para>Returns a <see cref="T:RogueLibsCore.CustomName"/> associated with this effect's description.</para>
+            </summary>
+            <returns>The <see cref="T:RogueLibsCore.CustomName"/> associated with this effect's description, if found; otherwise, <see langword="null"/>.</returns>
+        </member>
+        <member name="M:RogueLibsCore.EffectInfo.GetSprite">
+            <summary>
+              <para>Returns a <see cref="T:RogueLibsCore.RogueSprite"/> that represents this effect. Note that it works only on sprites initialized with <see cref="M:RogueLibsCore.EffectBuilder.WithSprite(System.Byte[],UnityEngine.Rect,System.Single)"/> or one of its overloads.</para>
+            </summary>
+            <returns>The <see cref="T:RogueLibsCore.RogueSprite"/> that represents this effect, if found; otherwise, <see langword="null"/>.</returns>
+        </member>
+        <member name="M:RogueLibsCore.EffectInfo.Get(System.Type)">
+            <summary>
+              <para>Gets the specified <see cref="T:RogueLibsCore.CustomEffect"/> <paramref name="type"/>'s metadata.</para>
+            </summary>
+            <param name="type">The <see cref="T:RogueLibsCore.CustomEffect"/> type to get the metadata for.</param>
+            <returns>The specified <paramref name="type"/>'s metadata.</returns>
+            <exception cref="T:System.ArgumentException"><paramref name="type"/> is not a <see cref="T:RogueLibsCore.CustomEffect"/>.</exception>
+        </member>
+        <member name="M:RogueLibsCore.EffectInfo.Get``1">
+            <summary>
+              <para>Gets the specified <typeparamref name="TEffect"/>'s metadata.</para>
+            </summary>
+            <typeparam name="TEffect">The <see cref="T:RogueLibsCore.CustomEffect"/> type get the metadata for.</typeparam>
+            <returns>The specified <typeparamref name="TEffect"/>'s metadata.</returns>
+        </member>
+        <member name="T:RogueLibsCore.IHookFactory`1">
+            <summary>
+              <para>Represents a hook factory, that creates hooks attachable to instances of type <typeparamref name="T"/>.</para>
+            </summary>
+            <typeparam name="T">The type of objects that the created hooks can be attached to.</typeparam>
+        </member>
+        <member name="T:RogueLibsCore.ItemInfo">
+            <summary>
+              <para>Represents the <see cref="T:RogueLibsCore.CustomItem"/> type metadata.</para>
+            </summary>
+        </member>
+        <member name="P:RogueLibsCore.ItemInfo.Name">
+            <summary>
+              <para>Gets the custom item's name.</para>
+            </summary>
+        </member>
+        <member name="P:RogueLibsCore.ItemInfo.Categories">
+            <summary>
+              <para>Gets the custom item's categories.</para>
+            </summary>
+        </member>
+        <member name="P:RogueLibsCore.ItemInfo.IgnoredChecks">
+            <summary>
+              <para>Gets the collection of inventory checks, ignored by the custom item.</para>
+            </summary>
+        </member>
+        <member name="M:RogueLibsCore.ItemInfo.GetName">
+            <summary>
+              <para>Returns a <see cref="T:RogueLibsCore.CustomName"/> associated with this item's name.</para>
+            </summary>
+            <returns>The <see cref="T:RogueLibsCore.CustomName"/> associated with this item's name, if found; otherwise, <see langword="null"/>.</returns>
+        </member>
+        <member name="M:RogueLibsCore.ItemInfo.GetDescription">
+            <summary>
+              <para>Returns a <see cref="T:RogueLibsCore.CustomName"/> associated with this item's description.</para>
+            </summary>
+            <returns>The <see cref="T:RogueLibsCore.CustomName"/> associated with this item's description, if found; otherwise, <see langword="null"/>.</returns>
+        </member>
+        <member name="M:RogueLibsCore.ItemInfo.GetUnlock">
+            <summary>
+              <para>Returns an <see cref="T:RogueLibsCore.ItemUnlock"/> associated with this item.</para>
+            </summary>
+            <returns>The <see cref="T:RogueLibsCore.ItemUnlock"/> associated with this item, if found; otherwise, <see langword="null"/>.</returns>
+        </member>
+        <member name="M:RogueLibsCore.ItemInfo.GetSprite">
+            <summary>
+              <para>Returns a <see cref="T:RogueLibsCore.RogueSprite"/> that represents this item. Note that it works only on sprites initialized with <see cref="M:RogueLibsCore.ItemBuilder.WithSprite(System.Byte[],UnityEngine.Rect,System.Single)"/> or one of its overloads.</para>
+            </summary>
+            <returns>The <see cref="T:RogueLibsCore.RogueSprite"/> that represents this item, if found; otherwise, <see langword="null"/>.</returns>
+        </member>
+        <member name="M:RogueLibsCore.ItemInfo.Get(System.Type)">
+            <summary>
+              <para>Gets the specified <see cref="T:RogueLibsCore.CustomItem"/> <paramref name="type"/>'s metadata.</para>
+            </summary>
+            <param name="type">The <see cref="T:RogueLibsCore.CustomItem"/> type to get the metadata for.</param>
+            <returns>The specified <paramref name="type"/>'s metadata.</returns>
+            <exception cref="T:System.ArgumentException"><paramref name="type"/> is not a <see cref="T:RogueLibsCore.CustomItem"/>.</exception>
+        </member>
+        <member name="M:RogueLibsCore.ItemInfo.Get``1">
+            <summary>
+              <para>Gets the specified <typeparamref name="TItem"/>'s metadata.</para>
+            </summary>
+            <typeparam name="TItem">The <see cref="T:RogueLibsCore.CustomItem"/> type get the metadata for.</typeparam>
+            <returns>The specified <typeparamref name="TItem"/>'s metadata.</returns>
+        </member>
+        <member name="T:RogueLibsCore.RogueFramework">
+            <summary>
+              <para>Represents the internal workings of RogueLibs.</para>
+            </summary>
+        </member>
+        <member name="P:RogueLibsCore.RogueFramework.DebugFlags">
+            <summary>
+              <para>Determines the RogueLibs' enabled debugging flags.</para>
+            </summary>
+        </member>
+        <member name="M:RogueLibsCore.RogueFramework.IsDebugEnabled(RogueLibsCore.DebugFlags)">
+            <summary>
+              <para>Determines whether any of the specified <paramref name="flags"/> is enabled.</para>
+            </summary>
+            <param name="flags">The flags to test for.</param>
+            <returns><see langword="true"/>, if any of the specified <paramref name="flags"/> is enabled; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="P:RogueLibsCore.RogueFramework.Plugin">
+            <summary>
+              <para>The RogueLibs' plugin instance.</para>
+            </summary>
+        </member>
+        <member name="P:RogueLibsCore.RogueFramework.Debug">
+            <summary>
+              <para>Determines whether RogueLibs was compiled in the Debug configuration.</para>
+            </summary>
+        </member>
+        <member name="F:RogueLibsCore.RogueFramework.ItemFactories">
+            <summary>
+              <para>The list of item hook factories, used by RogueLibs.</para>
+            </summary>
+        </member>
+        <member name="F:RogueLibsCore.RogueFramework.TraitFactories">
+            <summary>
+              <para>The list of trait hook factories, used by RogueLibs.</para>
+            </summary>
+        </member>
+        <member name="F:RogueLibsCore.RogueFramework.EffectFactories">
+            <summary>
+              <para>The list of effect hook factories, used by RogueLibs.</para>
+            </summary>
+        </member>
+        <member name="F:RogueLibsCore.RogueFramework.ObjectFactories">
+            <summary>
+              <para>The list of object hook factories, used by RogueLibs.</para>
+            </summary>
+        </member>
+        <member name="F:RogueLibsCore.RogueFramework.NameProviders">
+            <summary>
+              <para>The list of name providers, used by RogueLibs.</para>
+            </summary>
+        </member>
+        <member name="F:RogueLibsCore.RogueFramework.Unlocks">
+            <summary>
+              <para>The list of all unlocks in the game, including the vanilla ones too.</para>
+            </summary>
+        </member>
+        <member name="F:RogueLibsCore.RogueFramework.CustomDisasters">
+            <summary>
+              <para>The list of all custom disasters, that will be used in the game.</para>
+            </summary>
+        </member>
+        <member name="M:RogueLibsCore.RogueFramework.GetActiveDisaster">
+            <summary>
+              <para>Returns the currently active custom disaster.</para>
+            </summary>
+            <returns>The currently active instance of <see cref="T:RogueLibsCore.CustomDisaster"/>, if there is one; otherwise, <see langword="null"/>.</returns>
+        </member>
+        <member name="F:RogueLibsCore.RogueFramework.ExtraSprites">
+            <summary>
+              <para>The list of extra sprites, that will be used if a sprite is not found in the appropriate collection.</para>
+            </summary>
+        </member>
+        <member name="P:RogueLibsCore.RogueFramework.ItemSprites">
+            <summary>
+              <para>The <see cref="T:tk2dSpriteCollectionData"/> that contains the item sprites, or <see langword="null"/>, if it's not initialized yet.</para>
+            </summary>
+        </member>
+        <member name="P:RogueLibsCore.RogueFramework.ObjectSprites">
+            <summary>
+              <para>The <see cref="T:tk2dSpriteCollectionData"/> that contains the object sprites, or <see langword="null"/>, if it's not initialized yet.</para>
+            </summary>
+        </member>
+        <member name="P:RogueLibsCore.RogueFramework.FloorSprites">
+            <summary>
+              <para>The <see cref="T:tk2dSpriteCollectionData"/> that contains the floor sprites, or <see langword="null"/>, if it's not initialized yet.</para>
+            </summary>
+        </member>
+        <member name="P:RogueLibsCore.RogueFramework.BulletSprites">
+            <summary>
+              <para>The <see cref="T:tk2dSpriteCollectionData"/> that contains the projectile sprites, or <see langword="null"/>, if it's not initialized yet.</para>
+            </summary>
+        </member>
+        <member name="P:RogueLibsCore.RogueFramework.HairSprites">
+            <summary>
+              <para>The <see cref="T:tk2dSpriteCollectionData"/> that contains the hair sprites, or <see langword="null"/>, if it's not initialized yet.</para>
+            </summary>
+        </member>
+        <member name="P:RogueLibsCore.RogueFramework.FacialHairSprites">
+            <summary>
+              <para>The <see cref="T:tk2dSpriteCollectionData"/> that contains the facial hair sprites, or <see langword="null"/>, if it's not initialized yet.</para>
+            </summary>
+        </member>
+        <member name="P:RogueLibsCore.RogueFramework.HeadPieceSprites">
+            <summary>
+              <para>The <see cref="T:tk2dSpriteCollectionData"/> that contains the head piece sprites, or <see langword="null"/>, if it's not initialized yet.</para>
+            </summary>
+        </member>
+        <member name="P:RogueLibsCore.RogueFramework.AgentSprites">
+            <summary>
+              <para>The <see cref="T:tk2dSpriteCollectionData"/> that contains the agent sprites, or <see langword="null"/>, if it's not initialized yet.</para>
+            </summary>
+        </member>
+        <member name="P:RogueLibsCore.RogueFramework.BodySprites">
+            <summary>
+              <para>The <see cref="T:tk2dSpriteCollectionData"/> that contains the agent body sprites, or <see langword="null"/>, if it's not initialized yet.</para>
+            </summary>
+        </member>
+        <member name="P:RogueLibsCore.RogueFramework.WreckageSprites">
+            <summary>
+              <para>The <see cref="T:tk2dSpriteCollectionData"/> that contains the wreckage sprites, or <see langword="null"/>, if it's not initialized yet.</para>
+            </summary>
+        </member>
+        <member name="P:RogueLibsCore.RogueFramework.InterfaceSprites">
+            <summary>
+              <para>The <see cref="T:tk2dSpriteCollectionData"/> that contains the interface sprites, or <see langword="null"/>, if it's not initialized yet.</para>
+            </summary>
+        </member>
+        <member name="P:RogueLibsCore.RogueFramework.DecalSprites">
+            <summary>
+              <para>The <see cref="T:tk2dSpriteCollectionData"/> that contains the decal sprites, or <see langword="null"/>, if it's not initialized yet.</para>
+            </summary>
+        </member>
+        <member name="P:RogueLibsCore.RogueFramework.WallTopSprites">
+            <summary>
+              <para>The <see cref="T:tk2dSpriteCollectionData"/> that contains the wall top sprites, or <see langword="null"/>, if it's not initialized yet.</para>
+            </summary>
+        </member>
+        <member name="P:RogueLibsCore.RogueFramework.WallSprites">
+            <summary>
+              <para>The <see cref="T:tk2dSpriteCollectionData"/> that contains the wall sprites, or <see langword="null"/>, if it's not initialized yet.</para>
+            </summary>
+        </member>
+        <member name="P:RogueLibsCore.RogueFramework.SpawnerSprites">
+            <summary>
+              <para>The <see cref="T:tk2dSpriteCollectionData"/> that contains the spawner sprites, used in the Level Editor, or <see langword="null"/>, if it's not initialized yet.</para>
+            </summary>
+        </member>
+        <member name="P:RogueLibsCore.RogueFramework.ShadowSprites">
+            <summary>
+              <para>The <see cref="T:tk2dSpriteCollectionData"/> that contains the shadow sprites, or <see langword="null"/>, if it's not initialized yet.</para>
+            </summary>
+        </member>
+        <member name="P:RogueLibsCore.RogueFramework.TileShadowSprites">
+            <summary>
+              <para>The <see cref="T:tk2dSpriteCollectionData"/> that contains the tile shadow sprites, or <see langword="null"/>, if it's not initialized yet.</para>
+            </summary>
+        </member>
+        <member name="T:RogueLibsCore.RogueLibs">
+            <summary>
+              <para>Main RogueLibs class, that is used to initialize custom content.</para>
+            </summary>
+        </member>
+        <member name="M:RogueLibsCore.RogueLibs.CreateVersionText(System.String,System.String)">
+            <summary>
+              <para>Creates a <see cref="T:RogueLibsCore.VersionText"/>, that is displayed in the bottom-left corner, with the specified unique <paramref name="id"/> and initializes it with the specified <paramref name="text"/> value.</para>
+            </summary>
+            <param name="id">The unique identifier representing the <see cref="T:RogueLibsCore.VersionText"/>.</param>
+            <param name="text">The value to initialize the <see cref="T:RogueLibsCore.VersionText"/> with.</param>
+            <returns>The created <see cref="T:RogueLibsCore.VersionText"/>.</returns>
+        </member>
+        <member name="F:RogueLibsCore.RogueLibs.GUID">
+            <summary>
+              <para>RogueLibs' GUID.</para>
+            </summary>
+        </member>
+        <member name="F:RogueLibsCore.RogueLibs.Name">
+            <summary>
+              <para>RogueLibs' Name.</para>
+            </summary>
+        </member>
+        <member name="F:RogueLibsCore.RogueLibs.CompiledVersion">
+            <summary>
+              <para>Version of RogueLibs that the current assembly is compiled with.</para>
+            </summary>
+        </member>
+        <member name="F:RogueLibsCore.RogueLibs.CompiledSemanticVersion">
+            <summary>
+              <para>Semantic version of RogueLibs that the current assembly is compiled with. Don't use it in BepInPlugin.</para>
+            </summary>
+        </member>
+        <member name="P:RogueLibsCore.RogueLibs.Version">
+            <summary>
+              <para>Currently installed and running version of RogueLibs.</para>
+            </summary>
+        </member>
+        <member name="P:RogueLibsCore.RogueLibs.SemanticVersion">
+            <summary>
+              <para>Currently installed and running semantic version of RogueLibs.</para>
+            </summary>
+        </member>
+        <member name="M:RogueLibsCore.RogueLibs.CreateCustomItem``1">
+            <summary>
+              <para>Creates a <typeparamref name="TItem"/> custom item. Chain "With" methods to attach extra information.</para>
+            </summary>
+            <typeparam name="TItem">The <see cref="T:RogueLibsCore.CustomItem"/> type. Must have a parameterless constructor.</typeparam>
+            <returns>An <see cref="T:RogueLibsCore.ItemBuilder"/> with the specified item's metadata.</returns>
+        </member>
+        <member name="M:RogueLibsCore.RogueLibs.CreateCustomAbility``1">
+            <summary>
+              <para>Creates a <typeparamref name="TAbility"/> custom ability. Chain "With" methods to attach extra information.</para>
+            </summary>
+            <typeparam name="TAbility">The <see cref="T:RogueLibsCore.CustomAbility"/> type. Must have a parameterless constructor.</typeparam>
+            <returns>An <see cref="T:RogueLibsCore.AbilityBuilder"/> with the specified ability's metadata.</returns>
+        </member>
+        <member name="M:RogueLibsCore.RogueLibs.CreateCustomTrait``1">
+            <summary>
+              <para>Creates a <typeparamref name="TTrait"/> custom trait. Chain "With" methods to attach extra information.</para>
+            </summary>
+            <typeparam name="TTrait">The <see cref="T:RogueLibsCore.CustomTrait"/> type. Must have a parameterless constructor.</typeparam>
+            <returns>An <see cref="T:RogueLibsCore.TraitBuilder"/> with the specified trait's metadata.</returns>
+        </member>
+        <member name="M:RogueLibsCore.RogueLibs.CreateCustomEffect``1">
+            <summary>
+              <para>Creates a <typeparamref name="TEffect"/> custom effect. Chain "With" methods to attach extra information.</para>
+            </summary>
+            <typeparam name="TEffect">The <see cref="T:RogueLibsCore.CustomEffect"/> type. Must have a parameterless constructor.</typeparam>
+            <returns>An <see cref="T:RogueLibsCore.EffectBuilder"/> with the specified effect's metadata.</returns>
+        </member>
+        <member name="M:RogueLibsCore.RogueLibs.CreateCustomDisaster``1">
+            <summary>
+              <para>Creates a <typeparamref name="TDisaster"/> custom disaster. Chain "With" methods to attach extra information.</para>
+            </summary>
+            <typeparam name="TDisaster">The <see cref="T:RogueLibsCore.CustomDisaster"/> type. Must have a parameterless constructor.</typeparam>
+            <returns>An <see cref="T:RogueLibsCore.DisasterBuilder"/> with the specified disaster's metadata.</returns>
+        </member>
+        <member name="M:RogueLibsCore.RogueLibs.CreateCustomSprite(System.String,RogueLibsCore.SpriteScope,System.Byte[],System.Single)">
+            <summary>
+              <para>Creates a <see cref="T:RogueLibsCore.RogueSprite"/> with the specified <paramref name="name"/>, <paramref name="scope"/>, with a texture from <paramref name="rawData"/> with the specified <paramref name="ppu"/>.</para>
+            </summary>
+            <param name="name">The custom sprite's name.</param>
+            <param name="scope">The custom sprite's scope.</param>
+            <param name="rawData">The byte array containing a raw PNG- or JPEG-encoded image.</param>
+            <param name="ppu">The pixels-per-unit of the custom sprite's texture.</param>
+            <returns>The created <see cref="T:RogueLibsCore.RogueSprite"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="name"/> or <paramref name="rawData"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="ppu"/> is less than or equal to 0.</exception>
+        </member>
+        <member name="M:RogueLibsCore.RogueLibs.CreateCustomSprite(System.String,RogueLibsCore.SpriteScope,System.Byte[],UnityEngine.Rect,System.Single)">
+            <summary>
+              <para>Creates a <see cref="T:RogueLibsCore.RogueSprite"/> with the specified <paramref name="name"/>, <paramref name="scope"/>, with a texture from <paramref name="rawData"/> with the specified <paramref name="ppu"/>.</para>
+            </summary>
+            <param name="name">The custom sprite's name.</param>
+            <param name="scope">The custom sprite's scope.</param>
+            <param name="rawData">The byte array containing a raw PNG- or JPEG-encoded image.</param>
+            <param name="region">The region of the texture for the sprite to use.</param>
+            <param name="ppu">The pixels-per-unit of the custom sprite's texture.</param>
+            <returns>The created <see cref="T:RogueLibsCore.RogueSprite"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="name"/> or <paramref name="rawData"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="ppu"/> is less than or equal to 0.</exception>
+        </member>
+        <member name="M:RogueLibsCore.RogueLibs.CreateCustomAudio(System.String,System.Byte[],UnityEngine.AudioType)">
+            <summary>
+              <para>Creates a custom <see cref="T:UnityEngine.AudioClip"/> from <paramref name="rawData"/> using the specified audio <paramref name="format"/> and adds it to the game under the specified <paramref name="name"/>.</para>
+            </summary>
+            <param name="name">The name of the clip.</param>
+            <param name="rawData">The byte array containing a raw audio file.</param>
+            <param name="format">The audio file's format.</param>
+            <returns>The created <see cref="T:UnityEngine.AudioClip"/>.</returns>
+            <exception cref="T:System.IO.IOException">An I/O error occurred while opening the file.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">The caller does not have the required permission.</exception>
+            <exception cref="T:System.NotSupportedException">The specified <paramref name="format"/> is not supported.</exception>
+            <exception cref="T:System.Security.SecurityException">The caller does not have the required permission.</exception>
+        </member>
+        <member name="M:RogueLibsCore.RogueLibs.CreateCustomAudio(System.String,System.Byte[])">
+            <summary>
+              <para>Creates a custom <see cref="T:UnityEngine.AudioClip"/> from <paramref name="rawData"/> and adds it to the game under the specified <paramref name="name"/>. Automatically detects the audio format.</para>
+              <para>Supported audio formats: MP3 (.mp3), WAV (.wav, .wave) and Ogg (.ogg, .spx, .opus, .og_).</para>
+            </summary>
+            <param name="name">The name of the clip.</param>
+            <param name="rawData">The byte array containing a raw audio file.</param>
+            <returns>The created <see cref="T:UnityEngine.AudioClip"/>.</returns>
+            <exception cref="T:System.IO.IOException">An I/O error occurred while opening the file.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">The caller does not have the required permission.</exception>
+            <exception cref="T:System.NotSupportedException">The audio format could not be identified.</exception>
+            <exception cref="T:System.Security.SecurityException">The caller does not have the required permission.</exception>
+        </member>
+        <member name="M:RogueLibsCore.RogueLibs.CreateCustomName(System.String,System.String,RogueLibsCore.CustomNameInfo)">
+            <summary>
+              <para>Creates a localizable string with the specified <paramref name="name"/>, <paramref name="type"/> and localization <paramref name="info"/>.</para>
+            </summary>
+            <param name="name">The name of the localizable string to create.</param>
+            <param name="type">The type of the localizable string to create.</param>
+            <param name="info">The localization data to initialize the localizable string with.</param>
+            <returns>The created <see cref="T:RogueLibsCore.CustomName"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="name"/> or <paramref name="type"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentException">A localizable string with the specified <paramref name="name"/> and <paramref name="type"/> already exists in the <see cref="T:RogueLibsCore.CustomNameProvider"/>'s dictionary.</exception>
+        </member>
+        <member name="M:RogueLibsCore.RogueLibs.CreateCustomUnlock(RogueLibsCore.UnlockWrapper)">
+            <summary>
+              <para>Integrates the specified <paramref name="unlock"/> into the game.</para>
+            </summary>
+            <param name="unlock">The unlock to integrate into the game.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="unlock"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:RogueLibsCore.RogueLibs.GetUnlock(System.String,System.String)">
+            <summary>
+              <para>Gets an unlock with the specified <paramref name="name"/> and <paramref name="type"/>.</para>
+            </summary>
+            <param name="name">The name of the unlock to search for.</param>
+            <param name="type">The type of the unlock to search for.</param>
+            <returns>The unlock with the specified <paramref name="name"/> and <paramref name="type"/>, if found; otherwise, <see langword="null"/>.</returns>
+        </member>
+        <member name="M:RogueLibsCore.RogueLibs.GetUnlock``1(System.String)">
+            <summary>
+              <para>Gets an unlock of the specified <typeparamref name="TUnlock"/> type and with the specified <paramref name="name"/>.</para>
+            </summary>
+            <typeparam name="TUnlock">The type of the unlock to search for.</typeparam>
+            <param name="name">The name of the unlock to search for.</param>
+            <returns>The unlock of the specified <typeparamref name="TUnlock"/> type and with the specified <paramref name="name"/>, if found; otherwise, <see langword="null"/>.</returns>
+        </member>
+        <member name="M:RogueLibsCore.RogueLibs.LoadFromAssembly">
+            <summary>
+              <para>Invokes all static methods marked with a <see cref="T:RogueLibsCore.RLSetupAttribute"/> in the current assembly, and adds caching behavior to a <see cref="T:System.Resources.ResourceManager"/> in the generated <c>Properties.Resources</c> class.</para>
+            </summary>
+        </member>
+        <member name="T:RogueLibsCore.TraitInfo">
+            <summary>
+              <para>Represents the <see cref="T:RogueLibsCore.CustomTrait"/> type metadata.</para>
+            </summary>
+        </member>
+        <member name="P:RogueLibsCore.TraitInfo.Name">
+            <summary>
+              <para>Gets the custom trait's name.</para>
+            </summary>
+        </member>
+        <member name="M:RogueLibsCore.TraitInfo.GetName">
+            <summary>
+              <para>Returns a <see cref="T:RogueLibsCore.CustomName"/> associated with this trait's name.</para>
+            </summary>
+            <returns>The <see cref="T:RogueLibsCore.CustomName"/> associated with this trait's name, if found; otherwise, <see langword="null"/>.</returns>
+        </member>
+        <member name="M:RogueLibsCore.TraitInfo.GetDescription">
+            <summary>
+              <para>Returns a <see cref="T:RogueLibsCore.CustomName"/> associated with this trait's description.</para>
+            </summary>
+            <returns>The <see cref="T:RogueLibsCore.CustomName"/> associated with this trait's description, if found; otherwise, <see langword="null"/>.</returns>
+        </member>
+        <member name="M:RogueLibsCore.TraitInfo.GetUnlock">
+            <summary>
+              <para>Returns an <see cref="T:RogueLibsCore.TraitUnlock"/> associated with this trait.</para>
+            </summary>
+            <returns>The <see cref="T:RogueLibsCore.TraitUnlock"/> associated with this trait, if found; otherwise, <see langword="null"/>.</returns>
+        </member>
+        <member name="M:RogueLibsCore.TraitInfo.GetSprite">
+            <summary>
+              <para>Returns a <see cref="T:RogueLibsCore.RogueSprite"/> that represents this trait. Note that it works only on sprites initialized with <see cref="M:RogueLibsCore.TraitBuilder.WithSprite(System.Byte[],UnityEngine.Rect,System.Single)"/> or one of its overloads.</para>
+            </summary>
+            <returns>The <see cref="T:RogueLibsCore.RogueSprite"/> that represents this trait, if found; otherwise, <see langword="null"/>.</returns>
+        </member>
+        <member name="M:RogueLibsCore.TraitInfo.Get(System.Type)">
+            <summary>
+              <para>Gets the specified <see cref="T:RogueLibsCore.CustomTrait"/> <paramref name="type"/>'s metadata.</para>
+            </summary>
+            <param name="type">The <see cref="T:RogueLibsCore.CustomTrait"/> type to get the metadata for.</param>
+            <returns>The specified <paramref name="type"/>'s metadata.</returns>
+            <exception cref="T:System.ArgumentException"><paramref name="type"/> is not a <see cref="T:RogueLibsCore.CustomTrait"/>.</exception>
+        </member>
+        <member name="M:RogueLibsCore.TraitInfo.Get``1">
+            <summary>
+              <para>Gets the specified <typeparamref name="TTrait"/>'s metadata.</para>
+            </summary>
+            <typeparam name="TTrait">The <see cref="T:RogueLibsCore.CustomTrait"/> type get the metadata for.</typeparam>
+            <returns>The specified <typeparamref name="TTrait"/>'s metadata.</returns>
+        </member>
+        <member name="T:RogueLibsCore.VersionText">
+            <summary>
+              <para>Represents a version text displayed in the bottom-left corner of the screen. Does not necessarily display a version.</para>
+            </summary>
+        </member>
+        <member name="P:RogueLibsCore.VersionText.Id">
+            <summary>
+              <para>Gets the version text's unique identifier.</para>
+            </summary>
+        </member>
+        <member name="P:RogueLibsCore.VersionText.Text">
+            <summary>
+              <para>Gets or sets the text displayed by the version text.</para>
+            </summary>
+        </member>
         <member name="T:RogueLibsCore.AbilityHeldArgs">
             <summary>
               <para>Represents the custom ability's holding args.</para>
@@ -233,7 +800,7 @@
               <para>Gets the currently used instance of <see cref="T:GameController"/>.</para>
             </summary>
         </member>
-        <member name="P:RogueLibsCore.CustomEffect.EffectInfo">
+        <member name="P:RogueLibsCore.CustomEffect.Metadata">
             <summary>
               <para>Gets the custom effect's metadata.</para>
             </summary>
@@ -290,55 +857,55 @@
             <typeparam name="TEffect">The <see cref="T:RogueLibsCore.CustomEffect"/> type to add.</typeparam>
             <returns>The added effect's metadata.</returns>
         </member>
-        <member name="T:RogueLibsCore.EffectInfo">
+        <member name="T:RogueLibsCore.CustomEffectMetadata">
             <summary>
               <para>Represents the <see cref="T:RogueLibsCore.CustomEffect"/> type metadata.</para>
             </summary>
         </member>
-        <member name="P:RogueLibsCore.EffectInfo.Name">
+        <member name="P:RogueLibsCore.CustomEffectMetadata.Name">
             <summary>
               <para>Gets the custom effect's name.</para>
             </summary>
         </member>
-        <member name="P:RogueLibsCore.EffectInfo.Limitations">
+        <member name="P:RogueLibsCore.CustomEffectMetadata.Limitations">
             <summary>
               <para>Gets the custom effect's limitations flags.</para>
             </summary>
         </member>
-        <member name="P:RogueLibsCore.EffectInfo.RemoveOnDeath">
+        <member name="P:RogueLibsCore.CustomEffectMetadata.RemoveOnDeath">
             <summary>
               <para>Determines whether the status effect is removed on death.</para>
             </summary>
         </member>
-        <member name="P:RogueLibsCore.EffectInfo.RemoveOnKnockOut">
+        <member name="P:RogueLibsCore.CustomEffectMetadata.RemoveOnKnockOut">
             <summary>
               <para>Determines whether the status effect is removed on knockout.</para>
             </summary>
         </member>
-        <member name="P:RogueLibsCore.EffectInfo.RemoveOnNextLevel">
+        <member name="P:RogueLibsCore.CustomEffectMetadata.RemoveOnNextLevel">
             <summary>
               <para>Determines whether the status effect is removed between levels.</para>
             </summary>
         </member>
-        <member name="M:RogueLibsCore.EffectInfo.GetName">
+        <member name="M:RogueLibsCore.CustomEffectMetadata.GetName">
             <summary>
               <para>Returns a <see cref="T:RogueLibsCore.CustomName"/> associated with this effect's name.</para>
             </summary>
             <returns>The <see cref="T:RogueLibsCore.CustomName"/> associated with this effect's name, if found; otherwise, <see langword="null"/>.</returns>
         </member>
-        <member name="M:RogueLibsCore.EffectInfo.GetDescription">
+        <member name="M:RogueLibsCore.CustomEffectMetadata.GetDescription">
             <summary>
               <para>Returns a <see cref="T:RogueLibsCore.CustomName"/> associated with this effect's description.</para>
             </summary>
             <returns>The <see cref="T:RogueLibsCore.CustomName"/> associated with this effect's description, if found; otherwise, <see langword="null"/>.</returns>
         </member>
-        <member name="M:RogueLibsCore.EffectInfo.GetSprite">
+        <member name="M:RogueLibsCore.CustomEffectMetadata.GetSprite">
             <summary>
               <para>Returns a <see cref="T:RogueLibsCore.RogueSprite"/> that represents this effect. Note that it works only on sprites initialized with <see cref="M:RogueLibsCore.EffectBuilder.WithSprite(System.Byte[],UnityEngine.Rect,System.Single)"/> or one of its overloads.</para>
             </summary>
             <returns>The <see cref="T:RogueLibsCore.RogueSprite"/> that represents this effect, if found; otherwise, <see langword="null"/>.</returns>
         </member>
-        <member name="M:RogueLibsCore.EffectInfo.Get(System.Type)">
+        <member name="M:RogueLibsCore.CustomEffectMetadata.Get(System.Type)">
             <summary>
               <para>Gets the specified <see cref="T:RogueLibsCore.CustomEffect"/> <paramref name="type"/>'s metadata.</para>
             </summary>
@@ -346,7 +913,7 @@
             <returns>The specified <paramref name="type"/>'s metadata.</returns>
             <exception cref="T:System.ArgumentException"><paramref name="type"/> is not a <see cref="T:RogueLibsCore.CustomEffect"/>.</exception>
         </member>
-        <member name="M:RogueLibsCore.EffectInfo.Get``1">
+        <member name="M:RogueLibsCore.CustomEffectMetadata.Get``1">
             <summary>
               <para>Gets the specified <typeparamref name="TEffect"/>'s metadata.</para>
             </summary>
@@ -433,18 +1000,16 @@
         </member>
         <member name="T:RogueLibsCore.HookBase`1">
             <summary>
-              <para>Represents a hook base. Implements the interfaces, leaving only one abstract method to implement.</para>
+              <para>Represents a hook base. Implements <see cref="T:RogueLibsCore.IHook`1"/>.</para>
             </summary>
             <typeparam name="T">The type of objects that the hook can be attached to.</typeparam>
+        </member>
+        <member name="P:RogueLibsCore.HookBase`1.Instance">
+            <inheritdoc/>
         </member>
         <member name="M:RogueLibsCore.HookBase`1.Initialize">
             <summary>
               <para>Initializes the hook.</para>
-            </summary>
-        </member>
-        <member name="P:RogueLibsCore.HookBase`1.Instance">
-            <summary>
-              <para>Gets or sets the instance that the hook is attached to.</para>
             </summary>
         </member>
         <member name="T:RogueLibsCore.HookController`1">
@@ -453,54 +1018,353 @@
             </summary>
             <typeparam name="T">The type of objects that the hooks can be attached to.</typeparam>
         </member>
+        <member name="P:RogueLibsCore.HookController`1.Instance">
+            <inheritdoc/>
+        </member>
+        <member name="P:RogueLibsCore.HookController`1.Hooks">
+            <summary>
+              <para>Gets a read-only collection of all hooks attached to the current instance.</para>
+            </summary>
+        </member>
         <member name="M:RogueLibsCore.HookController`1.#ctor(`0)">
             <summary>
               <para>Initializes a new instance of the <see cref="T:RogueLibsCore.HookController`1"/> class with the specified <paramref name="instance"/>.</para>
             </summary>
             <param name="instance">An object that the hooks will be attached to.</param>
         </member>
-        <member name="P:RogueLibsCore.HookController`1.Instance">
+        <member name="M:RogueLibsCore.HookController`1.AddHook(RogueLibsCore.IHook)">
             <inheritdoc/>
         </member>
-        <member name="M:RogueLibsCore.HookController`1.AddHook(RogueLibsCore.IHook{`0})">
+        <member name="M:RogueLibsCore.HookController`1.RemoveHook(RogueLibsCore.IHook)">
             <inheritdoc/>
-        </member>
-        <member name="M:RogueLibsCore.HookController`1.AddHook``1">
-            <summary>
-              <para>Creates a hook of the specified <typeparamref name="THook"/> type using its default constructor and attaches it to the current instance.</para>
-            </summary>
-            <typeparam name="THook">The type of the hook to create and attach to the current instance.</typeparam>
-            <returns>The created hook of the specified <typeparamref name="THook"/> type.</returns>
-        </member>
-        <member name="M:RogueLibsCore.HookController`1.RemoveHook(RogueLibsCore.IHook{`0})">
-            <inheritdoc/>
-        </member>
-        <member name="M:RogueLibsCore.HookController`1.RemoveHook``1">
-            <summary>
-              <para>Detaches a hook of the specified <typeparamref name="THook"/> type from the current instance.</para>
-            </summary>
-            <typeparam name="THook">The type of the hook to detach from the current instance.</typeparam>
-            <returns><see langword="true"/>, if a hook of the specified <typeparamref name="THook"/> type was successfully detached; otherwise, <see langword="false"/>.</returns>
         </member>
         <member name="M:RogueLibsCore.HookController`1.GetHook``1">
             <inheritdoc/>
         </member>
-        <member name="M:RogueLibsCore.HookController`1.GetHooks``1">
-            <inheritdoc/>
-        </member>
         <member name="M:RogueLibsCore.HookController`1.GetHooks">
-            <summary>
-              <para>Gets all hooks attached to the current instance.</para>
-            </summary>
-            <returns>A collection of hooks attached to the current instance.</returns>
-        </member>
-        <member name="M:RogueLibsCore.HookController`1.Dispose">
             <inheritdoc/>
         </member>
         <member name="M:RogueLibsCore.HookController`1.Finalize">
             <summary>
               <para>Finalizes the <see cref="T:RogueLibsCore.HookController`1"/> and disposes of all its hooks.</para>
             </summary>
+        </member>
+        <member name="T:RogueLibsCore.HookExtensions">
+            <summary>
+              <para>The collection of hook extensions.</para>
+            </summary>
+        </member>
+        <member name="M:RogueLibsCore.HookExtensions.AddHook(InvItem,RogueLibsCore.IHook{InvItem})">
+            <summary>
+              <para>Attaches the specified <paramref name="hook"/> to the current <paramref name="instance"/>.</para>
+            </summary>
+            <param name="instance">The instance of a hookable type.</param>
+            <param name="hook">The hook to attach to the <paramref name="instance"/>.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> or <paramref name="hook"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:RogueLibsCore.HookExtensions.AddHook(PlayfieldObject,RogueLibsCore.IHook{PlayfieldObject})">
+            <summary>
+              <para>Attaches the specified <paramref name="hook"/> to the current <paramref name="instance"/>.</para>
+            </summary>
+            <param name="instance">The instance of a hookable type.</param>
+            <param name="hook">The hook to attach to the <paramref name="instance"/>.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> or <paramref name="hook"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:RogueLibsCore.HookExtensions.AddHook(StatusEffect,RogueLibsCore.IHook{StatusEffect})">
+            <summary>
+              <para>Attaches the specified <paramref name="hook"/> to the current <paramref name="instance"/>.</para>
+            </summary>
+            <param name="instance">The instance of a hookable type.</param>
+            <param name="hook">The hook to attach to the <paramref name="instance"/>.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> or <paramref name="hook"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:RogueLibsCore.HookExtensions.AddHook(Trait,RogueLibsCore.IHook{Trait})">
+            <summary>
+              <para>Attaches the specified <paramref name="hook"/> to the current <paramref name="instance"/>.</para>
+            </summary>
+            <param name="instance">The instance of a hookable type.</param>
+            <param name="hook">The hook to attach to the <paramref name="instance"/>.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> or <paramref name="hook"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:RogueLibsCore.HookExtensions.AddHook``1(InvItem)">
+            <summary>
+              <para>Creates a hook of the specified <typeparamref name="THook"/> type and attaches it to the current <paramref name="instance"/>.</para>
+            </summary>
+            <typeparam name="THook">The type of the hook to create and attach to the <paramref name="instance"/>.</typeparam>
+            <param name="instance">The instance of a hookable type.</param>
+            <returns>The created hook.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:RogueLibsCore.HookExtensions.AddHook``1(PlayfieldObject)">
+            <summary>
+              <para>Creates a hook of the specified <typeparamref name="THook"/> type and attaches it to the current <paramref name="instance"/>.</para>
+            </summary>
+            <typeparam name="THook">The type of the hook to create and attach to the <paramref name="instance"/>.</typeparam>
+            <param name="instance">The instance of a hookable type.</param>
+            <returns>The created hook.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:RogueLibsCore.HookExtensions.AddHook``1(StatusEffect)">
+            <summary>
+              <para>Creates a hook of the specified <typeparamref name="THook"/> type and attaches it to the current <paramref name="instance"/>.</para>
+            </summary>
+            <typeparam name="THook">The type of the hook to create and attach to the <paramref name="instance"/>.</typeparam>
+            <param name="instance">The instance of a hookable type.</param>
+            <returns>The created hook.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:RogueLibsCore.HookExtensions.AddHook``1(Trait)">
+            <summary>
+              <para>Creates a hook of the specified <typeparamref name="THook"/> type and attaches it to the current <paramref name="instance"/>.</para>
+            </summary>
+            <typeparam name="THook">The type of the hook to create and attach to the <paramref name="instance"/>.</typeparam>
+            <param name="instance">The instance of a hookable type.</param>
+            <returns>The created hook.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:RogueLibsCore.HookExtensions.RemoveHook(InvItem,RogueLibsCore.IHook{InvItem})">
+            <summary>
+              <para>Detaches the specified <paramref name="hook"/> from the current <paramref name="instance"/>.</para>
+            </summary>
+            <param name="instance">The instance of a hookable type.</param>
+            <param name="hook">The hook to detach from the <paramref name="instance"/>.</param>
+            <returns><see langword="true"/>, if the hook was successfully detached; otherwise, <see langword="false"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:RogueLibsCore.HookExtensions.RemoveHook(PlayfieldObject,RogueLibsCore.IHook{PlayfieldObject})">
+            <summary>
+              <para>Detaches the specified <paramref name="hook"/> from the current <paramref name="instance"/>.</para>
+            </summary>
+            <param name="instance">The instance of a hookable type.</param>
+            <param name="hook">The hook to detach from the <paramref name="instance"/>.</param>
+            <returns><see langword="true"/>, if the hook was successfully detached; otherwise, <see langword="false"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:RogueLibsCore.HookExtensions.RemoveHook(StatusEffect,RogueLibsCore.IHook{StatusEffect})">
+            <summary>
+              <para>Detaches the specified <paramref name="hook"/> from the current <paramref name="instance"/>.</para>
+            </summary>
+            <param name="instance">The instance of a hookable type.</param>
+            <param name="hook">The hook to detach from the <paramref name="instance"/>.</param>
+            <returns><see langword="true"/>, if the hook was successfully detached; otherwise, <see langword="false"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:RogueLibsCore.HookExtensions.RemoveHook(Trait,RogueLibsCore.IHook{Trait})">
+            <summary>
+              <para>Detaches the specified <paramref name="hook"/> from the current <paramref name="instance"/>.</para>
+            </summary>
+            <param name="instance">The instance of a hookable type.</param>
+            <param name="hook">The hook to detach from the <paramref name="instance"/>.</param>
+            <returns><see langword="true"/>, if the hook was successfully detached; otherwise, <see langword="false"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:RogueLibsCore.HookExtensions.RemoveHook``1(InvItem)">
+            <summary>
+              <para>Detaches a hook of the specified <typeparamref name="THook"/> type from the current <paramref name="instance"/>.</para>
+            </summary>
+            <typeparam name="THook">The type of a hook to detach from the <paramref name="instance"/>.</typeparam>
+            <param name="instance">The instance of a hookable type.</param>
+            <returns><see langword="true"/>, if a hook was successfully detached; otherwise, <see langword="false"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:RogueLibsCore.HookExtensions.RemoveHook``1(PlayfieldObject)">
+            <summary>
+              <para>Detaches a hook of the specified <typeparamref name="THook"/> type from the current <paramref name="instance"/>.</para>
+            </summary>
+            <typeparam name="THook">The type of a hook to detach from the <paramref name="instance"/>.</typeparam>
+            <param name="instance">The instance of a hookable type.</param>
+            <returns><see langword="true"/>, if a hook was successfully detached; otherwise, <see langword="false"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:RogueLibsCore.HookExtensions.RemoveHook``1(StatusEffect)">
+            <summary>
+              <para>Detaches a hook of the specified <typeparamref name="THook"/> type from the current <paramref name="instance"/>.</para>
+            </summary>
+            <typeparam name="THook">The type of a hook to detach from the <paramref name="instance"/>.</typeparam>
+            <param name="instance">The instance of a hookable type.</param>
+            <returns><see langword="true"/>, if a hook was successfully detached; otherwise, <see langword="false"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:RogueLibsCore.HookExtensions.RemoveHook``1(Trait)">
+            <summary>
+              <para>Detaches a hook of the specified <typeparamref name="THook"/> type from the current <paramref name="instance"/>.</para>
+            </summary>
+            <typeparam name="THook">The type of a hook to detach from the <paramref name="instance"/>.</typeparam>
+            <param name="instance">The instance of a hookable type.</param>
+            <returns><see langword="true"/>, if a hook was successfully detached; otherwise, <see langword="false"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:RogueLibsCore.HookExtensions.GetHook``1(InvItem)">
+            <summary>
+              <para>Returns a hook attached to the current <paramref name="instance"/>, that is assignable to a variable of <typeparamref name="THook"/> type.</para>
+            </summary>
+            <typeparam name="THook">The type of a hook to search for.</typeparam>
+            <param name="instance">The instance of a hookable type.</param>
+            <returns>The hook that is assignable to a variable of <typeparamref name="THook"/> type, if found; otherwise, <see langword="default"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:RogueLibsCore.HookExtensions.GetHook``1(PlayfieldObject)">
+            <summary>
+              <para>Returns a hook attached to the current <paramref name="instance"/>, that is assignable to a variable of <typeparamref name="THook"/> type.</para>
+            </summary>
+            <typeparam name="THook">The type of a hook to search for.</typeparam>
+            <param name="instance">The instance of a hookable type.</param>
+            <returns>The hook that is assignable to a variable of <typeparamref name="THook"/> type, if found; otherwise, <see langword="default"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:RogueLibsCore.HookExtensions.GetHook``1(StatusEffect)">
+            <summary>
+              <para>Returns a hook attached to the current <paramref name="instance"/>, that is assignable to a variable of <typeparamref name="THook"/> type.</para>
+            </summary>
+            <typeparam name="THook">The type of a hook to search for.</typeparam>
+            <param name="instance">The instance of a hookable type.</param>
+            <returns>The hook that is assignable to a variable of <typeparamref name="THook"/> type, if found; otherwise, <see langword="default"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:RogueLibsCore.HookExtensions.GetHook``1(Trait)">
+            <summary>
+              <para>Returns a hook attached to the current <paramref name="instance"/>, that is assignable to a variable of <typeparamref name="THook"/> type.</para>
+            </summary>
+            <typeparam name="THook">The type of a hook to search for.</typeparam>
+            <param name="instance">The instance of a hookable type.</param>
+            <returns>The hook that is assignable to a variable of <typeparamref name="THook"/> type, if found; otherwise, <see langword="default"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:RogueLibsCore.HookExtensions.GetOrAddHook``1(InvItem)">
+            <summary>
+              <para>Returns a hook attached to the current instance, that is assignable to a variable of the <typeparamref name="THook"/> type, or creates one if it doesn't exist.</para>
+            </summary>
+            <typeparam name="THook">The type of a hook to search for.</typeparam>
+            <param name="instance">The instance of a hookable type.</param>
+            <returns>The hook that is assignable to a variable of <typeparamref name="THook"/> type, if found; otherwise, <see langword="default"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:RogueLibsCore.HookExtensions.GetOrAddHook``1(PlayfieldObject)">
+            <summary>
+              <para>Returns a hook attached to the current instance, that is assignable to a variable of the <typeparamref name="THook"/> type, or creates one if it doesn't exist.</para>
+            </summary>
+            <typeparam name="THook">The type of a hook to search for.</typeparam>
+            <param name="instance">The instance of a hookable type.</param>
+            <returns>The hook that is assignable to a variable of <typeparamref name="THook"/> type, if found; otherwise, <see langword="default"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:RogueLibsCore.HookExtensions.GetOrAddHook``1(StatusEffect)">
+            <summary>
+              <para>Returns a hook attached to the current instance, that is assignable to a variable of the <typeparamref name="THook"/> type, or creates one if it doesn't exist.</para>
+            </summary>
+            <typeparam name="THook">The type of a hook to search for.</typeparam>
+            <param name="instance">The instance of a hookable type.</param>
+            <returns>The hook that is assignable to a variable of <typeparamref name="THook"/> type, if found; otherwise, <see langword="default"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:RogueLibsCore.HookExtensions.GetOrAddHook``1(Trait)">
+            <summary>
+              <para>Returns a hook attached to the current instance, that is assignable to a variable of the <typeparamref name="THook"/> type, or creates one if it doesn't exist.</para>
+            </summary>
+            <typeparam name="THook">The type of a hook to search for.</typeparam>
+            <param name="instance">The instance of a hookable type.</param>
+            <returns>The hook that is assignable to a variable of <typeparamref name="THook"/> type, if found; otherwise, <see langword="default"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:RogueLibsCore.HookExtensions.HasHook``1(InvItem)">
+            <summary>
+              <para>Determines whether the current instance contains a hook, that is assignable to a variable of the <typeparamref name="THook"/> type.</para>
+            </summary>
+            <typeparam name="THook">The type of a hook to search for.</typeparam>
+            <param name="instance">The instance of a hookable type.</param>
+            <returns><see langword="true"/>, if the current instance contains a hook, that is assignable to a variable of the <typeparamref name="THook"/> type; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="M:RogueLibsCore.HookExtensions.HasHook``1(PlayfieldObject)">
+            <summary>
+              <para>Determines whether the current instance contains a hook, that is assignable to a variable of the <typeparamref name="THook"/> type.</para>
+            </summary>
+            <typeparam name="THook">The type of a hook to search for.</typeparam>
+            <param name="instance">The instance of a hookable type.</param>
+            <returns><see langword="true"/>, if the current instance contains a hook, that is assignable to a variable of the <typeparamref name="THook"/> type; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="M:RogueLibsCore.HookExtensions.HasHook``1(StatusEffect)">
+            <summary>
+              <para>Determines whether the current instance contains a hook, that is assignable to a variable of the <typeparamref name="THook"/> type.</para>
+            </summary>
+            <typeparam name="THook">The type of a hook to search for.</typeparam>
+            <param name="instance">The instance of a hookable type.</param>
+            <returns><see langword="true"/>, if the current instance contains a hook, that is assignable to a variable of the <typeparamref name="THook"/> type; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="M:RogueLibsCore.HookExtensions.HasHook``1(Trait)">
+            <summary>
+              <para>Determines whether the current instance contains a hook, that is assignable to a variable of the <typeparamref name="THook"/> type.</para>
+            </summary>
+            <typeparam name="THook">The type of a hook to search for.</typeparam>
+            <param name="instance">The instance of a hookable type.</param>
+            <returns><see langword="true"/>, if the current instance contains a hook, that is assignable to a variable of the <typeparamref name="THook"/> type; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="M:RogueLibsCore.HookExtensions.GetHooks``1(InvItem)">
+            <summary>
+              <para>Returns an enumerable collection of all hooks attached to the current <paramref name="instance"/>, that are assignable to a variable of <typeparamref name="THook"/> type.</para>
+            </summary>
+            <typeparam name="THook">The type of the hooks to search for.</typeparam>
+            <param name="instance">The instance of a hookable type.</param>
+            <returns>An enumerable collection of hooks attached to the current <paramref name="instance"/>, that are assignable to a variable of <typeparamref name="THook"/> type.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:RogueLibsCore.HookExtensions.GetHooks``1(PlayfieldObject)">
+            <summary>
+              <para>Returns an enumerable collection of all hooks attached to the current <paramref name="instance"/>, that are assignable to a variable of <typeparamref name="THook"/> type.</para>
+            </summary>
+            <typeparam name="THook">The type of the hooks to search for.</typeparam>
+            <param name="instance">The instance of a hookable type.</param>
+            <returns>An enumerable collection of hooks attached to the current <paramref name="instance"/>, that are assignable to a variable of <typeparamref name="THook"/> type.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:RogueLibsCore.HookExtensions.GetHooks``1(StatusEffect)">
+            <summary>
+              <para>Returns an enumerable collection of all hooks attached to the current <paramref name="instance"/>, that are assignable to a variable of <typeparamref name="THook"/> type.</para>
+            </summary>
+            <typeparam name="THook">The type of the hooks to search for.</typeparam>
+            <param name="instance">The instance of a hookable type.</param>
+            <returns>An enumerable collection of hooks attached to the current <paramref name="instance"/>, that are assignable to a variable of <typeparamref name="THook"/> type.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:RogueLibsCore.HookExtensions.GetHooks``1(Trait)">
+            <summary>
+              <para>Returns an enumerable collection of all hooks attached to the current <paramref name="instance"/>, that are assignable to a variable of <typeparamref name="THook"/> type.</para>
+            </summary>
+            <typeparam name="THook">The type of the hooks to search for.</typeparam>
+            <param name="instance">The instance of a hookable type.</param>
+            <returns>An enumerable collection of hooks attached to the current <paramref name="instance"/>, that are assignable to a variable of <typeparamref name="THook"/> type.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:RogueLibsCore.HookExtensions.GetHooks(InvItem)">
+            <summary>
+              <para>Returns an enumerable collection of all hooks attached to the current <paramref name="instance"/>.</para>
+            </summary>
+            <param name="instance">The instance of a hookable type.</param>
+            <returns>An enumerable collection of hooks attached to the current <paramref name="instance"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:RogueLibsCore.HookExtensions.GetHooks(PlayfieldObject)">
+            <summary>
+              <para>Returns an enumerable collection of all hooks attached to the current <paramref name="instance"/>.</para>
+            </summary>
+            <param name="instance">The instance of a hookable type.</param>
+            <returns>An enumerable collection of hooks attached to the current <paramref name="instance"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:RogueLibsCore.HookExtensions.GetHooks(StatusEffect)">
+            <summary>
+              <para>Returns an enumerable collection of all hooks attached to the current <paramref name="instance"/>.</para>
+            </summary>
+            <param name="instance">The instance of a hookable type.</param>
+            <returns>An enumerable collection of hooks attached to the current <paramref name="instance"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:RogueLibsCore.HookExtensions.GetHooks(Trait)">
+            <summary>
+              <para>Returns an enumerable collection of all hooks attached to the current <paramref name="instance"/>.</para>
+            </summary>
+            <param name="instance">The instance of a hookable type.</param>
+            <returns>An enumerable collection of hooks attached to the current <paramref name="instance"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> is <see langword="null"/>.</exception>
         </member>
         <member name="T:RogueLibsCore.HookFactoryBase`1">
             <summary>
@@ -509,7 +1373,45 @@
             <typeparam name="T">The type of objects that the created hooks can be attached to.</typeparam>
         </member>
         <member name="M:RogueLibsCore.HookFactoryBase`1.TryCreate(`0,RogueLibsCore.IHook{`0}@)">
-            <inheritdoc/>
+            <summary>
+              <para>Tries to create a hook for the specified <paramref name="instance"/> of type <typeparamref name="T"/>, and returns a value that indicates whether a hook was created successfully.</para>
+            </summary>
+            <param name="instance">The instance of type <typeparamref name="T"/> to create a hook for.</param>
+            <param name="hook">A hook created for the specified <paramref name="instance"/> of type <typeparamref name="T"/>.</param>
+            <returns><see langword="true"/>, if a hook was successfully created; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="M:RogueLibsCore.HookSystem.GetStatusEffects(Trait)">
+            <summary>
+              <para>Returns the <see cref="T:StatusEffects"/> instance containing the current <paramref name="instance"/>.</para>
+            </summary>
+            <param name="instance">The current instance of <see cref="T:Trait"/>.</param>
+            <returns>The <see cref="T:StatusEffects"/> instance containing the current <paramref name="instance"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:RogueLibsCore.HookSystem.GetStatusEffects(StatusEffect)">
+            <summary>
+              <para>Returns the <see cref="T:StatusEffects"/> instance containing the current <paramref name="instance"/>.</para>
+            </summary>
+            <param name="instance">The current instance of <see cref="T:StatusEffect"/>.</param>
+            <returns>The <see cref="T:StatusEffects"/> instance containing the current <paramref name="instance"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:RogueLibsCore.HookSystem.GetHook(Unlock)">
+            <summary>
+              <para>Returns the <see cref="T:RogueLibsCore.UnlockWrapper"/> attached to the current <paramref name="instance"/>.</para>
+            </summary>
+            <param name="instance">The instance of a hookable type.</param>
+            <returns>The attached <see cref="T:RogueLibsCore.UnlockWrapper"/> hook, if found; otherwise, <see langword="null"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:RogueLibsCore.HookSystem.GetHook``1(Unlock)">
+            <summary>
+              <para>Returns a hook attached to the current <paramref name="instance"/>, that is assignable to a variable of <typeparamref name="THook"/> type.</para>
+            </summary>
+            <typeparam name="THook">The type of a hook to search for.</typeparam>
+            <param name="instance">The instance of a hookable type.</param>
+            <returns>The hook that is assignable to a variable of <typeparamref name="THook"/> type, if found; otherwise, <see langword="default"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> is <see langword="null"/>.</exception>
         </member>
         <member name="T:RogueLibsCore.IDoFixedUpdate">
             <summary>
@@ -546,14 +1448,14 @@
               <para>Represents a hook.</para>
             </summary>
         </member>
-        <member name="M:RogueLibsCore.IHook.Initialize">
-            <summary>
-              <para>Initializes the hook.</para>
-            </summary>
-        </member>
         <member name="P:RogueLibsCore.IHook.Instance">
             <summary>
-              <para>Gets or sets the instance that the hook is attached to.</para>
+              <para>Gets the instance that the hook is attached to.</para>
+            </summary>
+        </member>
+        <member name="M:RogueLibsCore.IHook.Initialize(System.Object)">
+            <summary>
+              <para>Initializes the hook on the specified <paramref name="instance"/>.</para>
             </summary>
         </member>
         <member name="T:RogueLibsCore.IHook`1">
@@ -564,7 +1466,7 @@
         </member>
         <member name="P:RogueLibsCore.IHook`1.Instance">
             <summary>
-              <para>Gets or sets the instance that the hook is attached to.</para>
+              <para>Gets the instance that the hook is attached to.</para>
             </summary>
         </member>
         <member name="T:RogueLibsCore.IHookController">
@@ -597,12 +1499,11 @@
             <typeparam name="THook">The type of the hook to search for.</typeparam>
             <returns>A hook that is assignable to a variable of <typeparamref name="THook"/> type, if found; otherwise, <see langword="null"/>.</returns>
         </member>
-        <member name="M:RogueLibsCore.IHookController.GetHooks``1">
+        <member name="M:RogueLibsCore.IHookController.GetHooks">
             <summary>
-              <para>Returns an enumerable collection of all hooks in the collection that are assignable to a variable of <typeparamref name="THook"/> type.</para>
+              <para>Returns an enumerable collection of all hooks in the collection.</para>
             </summary>
-            <typeparam name="THook">The type of the hooks to search for.</typeparam>
-            <returns>An enumerable collection of hooks that are assignable to a variable of <typeparamref name="THook"/> type.</returns>
+            <returns>An enumerable collection of hooks.</returns>
         </member>
         <member name="T:RogueLibsCore.IHookController`1">
             <summary>
@@ -615,45 +1516,17 @@
               <para>Gets the instance of type <typeparamref name="T"/> that the hooks are attached to.</para>
             </summary>
         </member>
-        <member name="M:RogueLibsCore.IHookController`1.AddHook(RogueLibsCore.IHook{`0})">
-            <summary>
-              <para>Attaches the specified <paramref name="hook"/> to the current instance.</para>
-            </summary>
-            <param name="hook">The hook to attach to the current instance.</param>
-        </member>
-        <member name="M:RogueLibsCore.IHookController`1.RemoveHook(RogueLibsCore.IHook{`0})">
-            <summary>
-              <para>Detaches the specified <paramref name="hook"/> from the current instance.</para>
-            </summary>
-            <param name="hook">The hook to detach from the current instance.</param>
-            <returns><see langword="true"/>, if the hook was successfully detached; otherwise, <see langword="false"/>.</returns>
-        </member>
         <member name="T:RogueLibsCore.IHookFactory">
             <summary>
               <para>Represents a hook factory.</para>
             </summary>
         </member>
-        <member name="M:RogueLibsCore.IHookFactory.TryCreate(System.Object,RogueLibsCore.IHook@)">
+        <member name="M:RogueLibsCore.IHookFactory.TryCreateHook(System.Object)">
             <summary>
-              <para>Tries to create a hook for the specified <paramref name="instance"/>, and returns a value that indicates whether a hook was created successfully.</para>
+              <para>Tries to create a hook for the specified <paramref name="instance"/>, and returns it.</para>
             </summary>
             <param name="instance">The object to create a hook for.</param>
-            <param name="hook">A hook created for the specified <paramref name="instance"/>.</param>
-            <returns><see langword="true"/>, if a hook was successfully created; otherwise, <see langword="false"/>.</returns>
-        </member>
-        <member name="T:RogueLibsCore.IHookFactory`1">
-            <summary>
-              <para>Represents a hook factory, that creates hooks attachable to instances of type <typeparamref name="T"/>.</para>
-            </summary>
-            <typeparam name="T">The type of objects that the created hooks can be attached to.</typeparam>
-        </member>
-        <member name="M:RogueLibsCore.IHookFactory`1.TryCreate(`0,RogueLibsCore.IHook{`0}@)">
-            <summary>
-              <para>Tries to create a hook for the specified <paramref name="instance"/> of type <typeparamref name="T"/>, and returns a value that indicates whether a hook was created successfully.</para>
-            </summary>
-            <param name="instance">The instance of type <typeparamref name="T"/> to create a hook for.</param>
-            <param name="hook">A hook created for the specified <paramref name="instance"/> of type <typeparamref name="T"/>.</param>
-            <returns><see langword="true"/>, if a hook was successfully created; otherwise, <see langword="false"/>.</returns>
+            <returns>The created hook, if one was successfully created; otherwise, <see langword="null"/>.</returns>
         </member>
         <member name="T:RogueLibsCore.CustomItem">
             <summary>
@@ -665,14 +1538,14 @@
               <para>Gets the current <see cref="T:InvItem"/> instance.</para>
             </summary>
         </member>
-        <member name="P:RogueLibsCore.CustomItem.Inventory">
-            <summary>
-              <para>Gets the item's inventory.</para>
-            </summary>
-        </member>
         <member name="P:RogueLibsCore.CustomItem.Owner">
             <summary>
               <para>Gets the item's owner.</para>
+            </summary>
+        </member>
+        <member name="P:RogueLibsCore.CustomItem.Inventory">
+            <summary>
+              <para>Gets the item's inventory.</para>
             </summary>
         </member>
         <member name="P:RogueLibsCore.CustomItem.Count">
@@ -685,7 +1558,7 @@
               <para>Gets the currently used instance of <see cref="T:GameController"/>.</para>
             </summary>
         </member>
-        <member name="P:RogueLibsCore.CustomItem.ItemInfo">
+        <member name="P:RogueLibsCore.CustomItem.Metadata">
             <summary>
               <para>Gets the custom item's metadata.</para>
             </summary>
@@ -704,6 +1577,12 @@
             </summary>
             <returns>The custom count string, if overriden; otherwise, <see langword="null"/>.</returns>
         </member>
+        <member name="M:RogueLibsCore.CustomItem.GetSprite">
+            <summary>
+              <para>Returns the custom item's sprite name. Can be dynamically changed, for example, based on the item's count.</para>
+            </summary>
+            <returns>The name of the sprite for the custom item to use.</returns>
+        </member>
         <member name="T:RogueLibsCore.CustomItemFactory">
             <summary>
               <para>Represents a factory of <see cref="T:RogueLibsCore.CustomItem"/> hooks.</para>
@@ -718,6 +1597,114 @@
             </summary>
             <typeparam name="TItem">The <see cref="T:RogueLibsCore.CustomItem"/> type to add.</typeparam>
             <returns>The added item's metadata.</returns>
+        </member>
+        <member name="T:RogueLibsCore.CustomItemMetadata">
+            <summary>
+              <para>Represents the <see cref="T:RogueLibsCore.CustomItem"/> type metadata.</para>
+            </summary>
+        </member>
+        <member name="P:RogueLibsCore.CustomItemMetadata.Name">
+            <summary>
+              <para>Gets the custom item's name.</para>
+            </summary>
+        </member>
+        <member name="P:RogueLibsCore.CustomItemMetadata.Categories">
+            <summary>
+              <para>Gets the custom item's categories.</para>
+            </summary>
+        </member>
+        <member name="P:RogueLibsCore.CustomItemMetadata.IgnoredChecks">
+            <summary>
+              <para>Gets the collection of inventory checks, ignored by the custom item.</para>
+            </summary>
+        </member>
+        <member name="M:RogueLibsCore.CustomItemMetadata.GetName">
+            <summary>
+              <para>Returns a <see cref="T:RogueLibsCore.CustomName"/> associated with this item's name.</para>
+            </summary>
+            <returns>The <see cref="T:RogueLibsCore.CustomName"/> associated with this item's name, if found; otherwise, <see langword="null"/>.</returns>
+        </member>
+        <member name="M:RogueLibsCore.CustomItemMetadata.GetDescription">
+            <summary>
+              <para>Returns a <see cref="T:RogueLibsCore.CustomName"/> associated with this item's description.</para>
+            </summary>
+            <returns>The <see cref="T:RogueLibsCore.CustomName"/> associated with this item's description, if found; otherwise, <see langword="null"/>.</returns>
+        </member>
+        <member name="M:RogueLibsCore.CustomItemMetadata.GetUnlock">
+            <summary>
+              <para>Returns an <see cref="T:RogueLibsCore.ItemUnlock"/> associated with this item.</para>
+            </summary>
+            <returns>The <see cref="T:RogueLibsCore.ItemUnlock"/> associated with this item, if found; otherwise, <see langword="null"/>.</returns>
+        </member>
+        <member name="M:RogueLibsCore.CustomItemMetadata.GetSprite">
+            <summary>
+              <para>Returns a <see cref="T:RogueLibsCore.RogueSprite"/> that represents this item. Note that it works only on sprites initialized with <see cref="M:RogueLibsCore.ItemBuilder.WithSprite(System.Byte[],UnityEngine.Rect,System.Single)"/> or one of its overloads.</para>
+            </summary>
+            <returns>The <see cref="T:RogueLibsCore.RogueSprite"/> that represents this item, if found; otherwise, <see langword="null"/>.</returns>
+        </member>
+        <member name="M:RogueLibsCore.CustomItemMetadata.Get(System.Type)">
+            <summary>
+              <para>Gets the specified <see cref="T:RogueLibsCore.CustomItem"/> <paramref name="type"/>'s metadata.</para>
+            </summary>
+            <param name="type">The <see cref="T:RogueLibsCore.CustomItem"/> type to get the metadata for.</param>
+            <returns>The specified <paramref name="type"/>'s metadata.</returns>
+            <exception cref="T:System.ArgumentException"><paramref name="type"/> is not a <see cref="T:RogueLibsCore.CustomItem"/>.</exception>
+        </member>
+        <member name="M:RogueLibsCore.CustomItemMetadata.Get``1">
+            <summary>
+              <para>Gets the specified <typeparamref name="TItem"/>'s metadata.</para>
+            </summary>
+            <typeparam name="TItem">The <see cref="T:RogueLibsCore.CustomItem"/> type get the metadata for.</typeparam>
+            <returns>The specified <typeparamref name="TItem"/>'s metadata.</returns>
+        </member>
+        <member name="T:RogueLibsCore.ItemNameAttribute">
+            <summary>
+              <para>Specifies a different name for the custom item to use.</para>
+            </summary>
+        </member>
+        <member name="P:RogueLibsCore.ItemNameAttribute.Name">
+            <summary>
+              <para>Gets the custom item's name.</para>
+            </summary>
+        </member>
+        <member name="M:RogueLibsCore.ItemNameAttribute.#ctor(System.String)">
+            <summary>
+              <para>Initializes a new instance of the <see cref="T:RogueLibsCore.ItemNameAttribute"/> class with the specified <paramref name="name"/>.</para>
+            </summary>
+            <param name="name">The custom item's name.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="name"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="T:RogueLibsCore.ItemCategoriesAttribute">
+            <summary>
+              <para>Specifies custom item's categories.</para>
+            </summary>
+        </member>
+        <member name="P:RogueLibsCore.ItemCategoriesAttribute.Categories">
+            <summary>
+              <para>Gets the collection of custom item's categories.</para>
+            </summary>
+        </member>
+        <member name="M:RogueLibsCore.ItemCategoriesAttribute.#ctor(System.String[])">
+            <summary>
+              <para>Initializes a new instance of the <see cref="T:RogueLibsCore.ItemCategoriesAttribute"/> class with the specified <paramref name="categories"/>.</para>
+            </summary>
+            <param name="categories">The custom item's categories.</param>
+        </member>
+        <member name="T:RogueLibsCore.IgnoreChecksAttribute">
+            <summary>
+              <para>Indicates that the custom item should ignore certain inventory checks.</para>
+            </summary>
+        </member>
+        <member name="P:RogueLibsCore.IgnoreChecksAttribute.IgnoredChecks">
+            <summary>
+              <para>Gets the collection of inventory checks ignored by the item.</para>
+            </summary>
+        </member>
+        <member name="M:RogueLibsCore.IgnoreChecksAttribute.#ctor(System.String[])">
+            <summary>
+              <para>Initializes a new instance of the <see cref="T:RogueLibsCore.IgnoreChecksAttribute"/> class with the specified <paramref name="ignoreChecks"/>.</para>
+            </summary>
+            <param name="ignoreChecks">The inventory checks to ignore.</param>
         </member>
         <member name="T:RogueLibsCore.CustomTooltip">
             <summary>
@@ -1223,114 +2210,6 @@
             <typeparam name="TArgs">The <see cref="T:RogueLibsCore.RogueEventArgs"/> used by the event.</typeparam>
             <param name="e">The event args.</param>
         </member>
-        <member name="T:RogueLibsCore.ItemInfo">
-            <summary>
-              <para>Represents the <see cref="T:RogueLibsCore.CustomItem"/> type metadata.</para>
-            </summary>
-        </member>
-        <member name="P:RogueLibsCore.ItemInfo.Name">
-            <summary>
-              <para>Gets the custom item's name.</para>
-            </summary>
-        </member>
-        <member name="P:RogueLibsCore.ItemInfo.Categories">
-            <summary>
-              <para>Gets the custom item's categories.</para>
-            </summary>
-        </member>
-        <member name="P:RogueLibsCore.ItemInfo.IgnoredChecks">
-            <summary>
-              <para>Gets the collection of inventory checks, ignored by the custom item.</para>
-            </summary>
-        </member>
-        <member name="M:RogueLibsCore.ItemInfo.GetName">
-            <summary>
-              <para>Returns a <see cref="T:RogueLibsCore.CustomName"/> associated with this item's name.</para>
-            </summary>
-            <returns>The <see cref="T:RogueLibsCore.CustomName"/> associated with this item's name, if found; otherwise, <see langword="null"/>.</returns>
-        </member>
-        <member name="M:RogueLibsCore.ItemInfo.GetDescription">
-            <summary>
-              <para>Returns a <see cref="T:RogueLibsCore.CustomName"/> associated with this item's description.</para>
-            </summary>
-            <returns>The <see cref="T:RogueLibsCore.CustomName"/> associated with this item's description, if found; otherwise, <see langword="null"/>.</returns>
-        </member>
-        <member name="M:RogueLibsCore.ItemInfo.GetUnlock">
-            <summary>
-              <para>Returns an <see cref="T:RogueLibsCore.ItemUnlock"/> associated with this item.</para>
-            </summary>
-            <returns>The <see cref="T:RogueLibsCore.ItemUnlock"/> associated with this item, if found; otherwise, <see langword="null"/>.</returns>
-        </member>
-        <member name="M:RogueLibsCore.ItemInfo.GetSprite">
-            <summary>
-              <para>Returns a <see cref="T:RogueLibsCore.RogueSprite"/> that represents this item. Note that it works only on sprites initialized with <see cref="M:RogueLibsCore.ItemBuilder.WithSprite(System.Byte[],UnityEngine.Rect,System.Single)"/> or one of its overloads.</para>
-            </summary>
-            <returns>The <see cref="T:RogueLibsCore.RogueSprite"/> that represents this item, if found; otherwise, <see langword="null"/>.</returns>
-        </member>
-        <member name="M:RogueLibsCore.ItemInfo.Get(System.Type)">
-            <summary>
-              <para>Gets the specified <see cref="T:RogueLibsCore.CustomItem"/> <paramref name="type"/>'s metadata.</para>
-            </summary>
-            <param name="type">The <see cref="T:RogueLibsCore.CustomItem"/> type to get the metadata for.</param>
-            <returns>The specified <paramref name="type"/>'s metadata.</returns>
-            <exception cref="T:System.ArgumentException"><paramref name="type"/> is not a <see cref="T:RogueLibsCore.CustomItem"/>.</exception>
-        </member>
-        <member name="M:RogueLibsCore.ItemInfo.Get``1">
-            <summary>
-              <para>Gets the specified <typeparamref name="TItem"/>'s metadata.</para>
-            </summary>
-            <typeparam name="TItem">The <see cref="T:RogueLibsCore.CustomItem"/> type get the metadata for.</typeparam>
-            <returns>The specified <typeparamref name="TItem"/>'s metadata.</returns>
-        </member>
-        <member name="T:RogueLibsCore.ItemNameAttribute">
-            <summary>
-              <para>Specifies a different name for the custom item to use.</para>
-            </summary>
-        </member>
-        <member name="P:RogueLibsCore.ItemNameAttribute.Name">
-            <summary>
-              <para>Gets the custom item's name.</para>
-            </summary>
-        </member>
-        <member name="M:RogueLibsCore.ItemNameAttribute.#ctor(System.String)">
-            <summary>
-              <para>Initializes a new instance of the <see cref="T:RogueLibsCore.ItemNameAttribute"/> class with the specified <paramref name="name"/>.</para>
-            </summary>
-            <param name="name">The custom item's name.</param>
-            <exception cref="T:System.ArgumentNullException"><paramref name="name"/> is <see langword="null"/>.</exception>
-        </member>
-        <member name="T:RogueLibsCore.ItemCategoriesAttribute">
-            <summary>
-              <para>Specifies custom item's categories.</para>
-            </summary>
-        </member>
-        <member name="P:RogueLibsCore.ItemCategoriesAttribute.Categories">
-            <summary>
-              <para>Gets the collection of custom item's categories.</para>
-            </summary>
-        </member>
-        <member name="M:RogueLibsCore.ItemCategoriesAttribute.#ctor(System.String[])">
-            <summary>
-              <para>Initializes a new instance of the <see cref="T:RogueLibsCore.ItemCategoriesAttribute"/> class with the specified <paramref name="categories"/>.</para>
-            </summary>
-            <param name="categories">The custom item's categories.</param>
-        </member>
-        <member name="T:RogueLibsCore.IgnoreChecksAttribute">
-            <summary>
-              <para>Indicates that the custom item should ignore certain inventory checks.</para>
-            </summary>
-        </member>
-        <member name="P:RogueLibsCore.IgnoreChecksAttribute.IgnoredChecks">
-            <summary>
-              <para>Gets the collection of inventory checks ignored by the item.</para>
-            </summary>
-        </member>
-        <member name="M:RogueLibsCore.IgnoreChecksAttribute.#ctor(System.String[])">
-            <summary>
-              <para>Initializes a new instance of the <see cref="T:RogueLibsCore.IgnoreChecksAttribute"/> class with the specified <paramref name="ignoreChecks"/>.</para>
-            </summary>
-            <param name="ignoreChecks">The inventory checks to ignore.</param>
-        </member>
         <member name="T:RogueLibsCore.ItemTypes">
             <summary>
               <para>The collection of item types used in the game. Use it to avoid typos.</para>
@@ -1409,7 +2288,7 @@
               <para>Gets the currently used instance of <see cref="T:GameController"/>.</para>
             </summary>
         </member>
-        <member name="P:RogueLibsCore.CustomTrait.TraitInfo">
+        <member name="P:RogueLibsCore.CustomTrait.Metadata">
             <summary>
               <para>Gets the custom trait's metadata.</para>
             </summary>
@@ -1442,6 +2321,55 @@
             <typeparam name="TTrait">The <see cref="T:RogueLibsCore.CustomTrait"/> type to add.</typeparam>
             <returns>The added trait's metadata.</returns>
         </member>
+        <member name="T:RogueLibsCore.CustomTraitMetadata">
+            <summary>
+              <para>Represents the <see cref="T:RogueLibsCore.CustomTrait"/> type metadata.</para>
+            </summary>
+        </member>
+        <member name="P:RogueLibsCore.CustomTraitMetadata.Name">
+            <summary>
+              <para>Gets the custom trait's name.</para>
+            </summary>
+        </member>
+        <member name="M:RogueLibsCore.CustomTraitMetadata.GetName">
+            <summary>
+              <para>Returns a <see cref="T:RogueLibsCore.CustomName"/> associated with this trait's name.</para>
+            </summary>
+            <returns>The <see cref="T:RogueLibsCore.CustomName"/> associated with this trait's name, if found; otherwise, <see langword="null"/>.</returns>
+        </member>
+        <member name="M:RogueLibsCore.CustomTraitMetadata.GetDescription">
+            <summary>
+              <para>Returns a <see cref="T:RogueLibsCore.CustomName"/> associated with this trait's description.</para>
+            </summary>
+            <returns>The <see cref="T:RogueLibsCore.CustomName"/> associated with this trait's description, if found; otherwise, <see langword="null"/>.</returns>
+        </member>
+        <member name="M:RogueLibsCore.CustomTraitMetadata.GetUnlock">
+            <summary>
+              <para>Returns an <see cref="T:RogueLibsCore.TraitUnlock"/> associated with this trait.</para>
+            </summary>
+            <returns>The <see cref="T:RogueLibsCore.TraitUnlock"/> associated with this trait, if found; otherwise, <see langword="null"/>.</returns>
+        </member>
+        <member name="M:RogueLibsCore.CustomTraitMetadata.GetSprite">
+            <summary>
+              <para>Returns a <see cref="T:RogueLibsCore.RogueSprite"/> that represents this trait. Note that it works only on sprites initialized with <see cref="M:RogueLibsCore.TraitBuilder.WithSprite(System.Byte[],UnityEngine.Rect,System.Single)"/> or one of its overloads.</para>
+            </summary>
+            <returns>The <see cref="T:RogueLibsCore.RogueSprite"/> that represents this trait, if found; otherwise, <see langword="null"/>.</returns>
+        </member>
+        <member name="M:RogueLibsCore.CustomTraitMetadata.Get(System.Type)">
+            <summary>
+              <para>Gets the specified <see cref="T:RogueLibsCore.CustomTrait"/> <paramref name="type"/>'s metadata.</para>
+            </summary>
+            <param name="type">The <see cref="T:RogueLibsCore.CustomTrait"/> type to get the metadata for.</param>
+            <returns>The specified <paramref name="type"/>'s metadata.</returns>
+            <exception cref="T:System.ArgumentException"><paramref name="type"/> is not a <see cref="T:RogueLibsCore.CustomTrait"/>.</exception>
+        </member>
+        <member name="M:RogueLibsCore.CustomTraitMetadata.Get``1">
+            <summary>
+              <para>Gets the specified <typeparamref name="TTrait"/>'s metadata.</para>
+            </summary>
+            <typeparam name="TTrait">The <see cref="T:RogueLibsCore.CustomTrait"/> type get the metadata for.</typeparam>
+            <returns>The specified <typeparamref name="TTrait"/>'s metadata.</returns>
+        </member>
         <member name="T:RogueLibsCore.ITraitUpdateable">
             <summary>
               <para>Indicates that a custom trait has an update coroutine.</para>
@@ -1452,55 +2380,6 @@
               <para>The method that is called as a part of the trait's update coroutine.</para>
             </summary>
             <param name="e">The custom trait's update data.</param>
-        </member>
-        <member name="T:RogueLibsCore.TraitInfo">
-            <summary>
-              <para>Represents the <see cref="T:RogueLibsCore.CustomTrait"/> type metadata.</para>
-            </summary>
-        </member>
-        <member name="P:RogueLibsCore.TraitInfo.Name">
-            <summary>
-              <para>Gets the custom trait's name.</para>
-            </summary>
-        </member>
-        <member name="M:RogueLibsCore.TraitInfo.GetName">
-            <summary>
-              <para>Returns a <see cref="T:RogueLibsCore.CustomName"/> associated with this trait's name.</para>
-            </summary>
-            <returns>The <see cref="T:RogueLibsCore.CustomName"/> associated with this trait's name, if found; otherwise, <see langword="null"/>.</returns>
-        </member>
-        <member name="M:RogueLibsCore.TraitInfo.GetDescription">
-            <summary>
-              <para>Returns a <see cref="T:RogueLibsCore.CustomName"/> associated with this trait's description.</para>
-            </summary>
-            <returns>The <see cref="T:RogueLibsCore.CustomName"/> associated with this trait's description, if found; otherwise, <see langword="null"/>.</returns>
-        </member>
-        <member name="M:RogueLibsCore.TraitInfo.GetUnlock">
-            <summary>
-              <para>Returns an <see cref="T:RogueLibsCore.TraitUnlock"/> associated with this trait.</para>
-            </summary>
-            <returns>The <see cref="T:RogueLibsCore.TraitUnlock"/> associated with this trait, if found; otherwise, <see langword="null"/>.</returns>
-        </member>
-        <member name="M:RogueLibsCore.TraitInfo.GetSprite">
-            <summary>
-              <para>Returns a <see cref="T:RogueLibsCore.RogueSprite"/> that represents this trait. Note that it works only on sprites initialized with <see cref="M:RogueLibsCore.TraitBuilder.WithSprite(System.Byte[],UnityEngine.Rect,System.Single)"/> or one of its overloads.</para>
-            </summary>
-            <returns>The <see cref="T:RogueLibsCore.RogueSprite"/> that represents this trait, if found; otherwise, <see langword="null"/>.</returns>
-        </member>
-        <member name="M:RogueLibsCore.TraitInfo.Get(System.Type)">
-            <summary>
-              <para>Gets the specified <see cref="T:RogueLibsCore.CustomTrait"/> <paramref name="type"/>'s metadata.</para>
-            </summary>
-            <param name="type">The <see cref="T:RogueLibsCore.CustomTrait"/> type to get the metadata for.</param>
-            <returns>The specified <paramref name="type"/>'s metadata.</returns>
-            <exception cref="T:System.ArgumentException"><paramref name="type"/> is not a <see cref="T:RogueLibsCore.CustomTrait"/>.</exception>
-        </member>
-        <member name="M:RogueLibsCore.TraitInfo.Get``1">
-            <summary>
-              <para>Gets the specified <typeparamref name="TTrait"/>'s metadata.</para>
-            </summary>
-            <typeparam name="TTrait">The <see cref="T:RogueLibsCore.CustomTrait"/> type get the metadata for.</typeparam>
-            <returns>The specified <typeparamref name="TTrait"/>'s metadata.</returns>
         </member>
         <member name="T:RogueLibsCore.TraitNameAttribute">
             <summary>
@@ -2750,6 +3629,11 @@
         <member name="M:RogueLibsCore.TraitUnlock.OnPushedButton">
             <inheritdoc/>
         </member>
+        <member name="P:RogueLibsCore.CustomUiElement.gc">
+            <summary>
+              <para>Gets the currently used instance of <see cref="T:GameController"/>.</para>
+            </summary>
+        </member>
         <member name="T:RogueLibsCore.CustomInteraction">
             <summary>
               <para>Represents an interaction. An unnecessary layer of abstraction, but it's kind of late to fix that now.</para>
@@ -3404,13 +4288,13 @@
               <para>Represents a <see cref="T:RogueLibsCore.CustomAbility"/> builder, that attaches additional information to the ability.</para>
             </summary>
         </member>
-        <member name="M:RogueLibsCore.AbilityBuilder.#ctor(RogueLibsCore.ItemInfo)">
+        <member name="M:RogueLibsCore.AbilityBuilder.#ctor(RogueLibsCore.CustomItemMetadata)">
             <summary>
-              <para>Initializes a new instance of the <see cref="T:RogueLibsCore.ItemBuilder"/> class with the specified <paramref name="info"/>.</para>
+              <para>Initializes a new instance of the <see cref="T:RogueLibsCore.ItemBuilder"/> class with the specified <paramref name="metadata"/>.</para>
             </summary>
-            <param name="info">The item metadata to use.</param>
+            <param name="metadata">The item metadata to use.</param>
         </member>
-        <member name="P:RogueLibsCore.AbilityBuilder.Info">
+        <member name="P:RogueLibsCore.AbilityBuilder.Metadata">
             <summary>
               <para>The used item metadata.</para>
             </summary>
@@ -3491,13 +4375,13 @@
               <para>Represents a <see cref="T:RogueLibsCore.CustomDisaster"/> builder, that attaches additional information to the disaster.</para>
             </summary>
         </member>
-        <member name="M:RogueLibsCore.DisasterBuilder.#ctor(RogueLibsCore.DisasterInfo)">
+        <member name="M:RogueLibsCore.DisasterBuilder.#ctor(RogueLibsCore.CustomDisasterMetadata)">
             <summary>
-              <para>Initializes a new instance of the <see cref="T:RogueLibsCore.DisasterBuilder"/> class with the specified <paramref name="info"/>.</para>
+              <para>Initializes a new instance of the <see cref="T:RogueLibsCore.DisasterBuilder"/> class with the specified <paramref name="metadata"/>.</para>
             </summary>
-            <param name="info">The disaster metadata to use.</param>
+            <param name="metadata">The disaster metadata to use.</param>
         </member>
-        <member name="P:RogueLibsCore.DisasterBuilder.Info">
+        <member name="P:RogueLibsCore.DisasterBuilder.Metadata">
             <summary>
               <para>The used disaster metadata.</para>
             </summary>
@@ -3520,6 +4404,11 @@
         <member name="P:RogueLibsCore.DisasterBuilder.Message2">
             <summary>
               <para>Gets the disaster's localizable second message.</para>
+            </summary>
+        </member>
+        <member name="P:RogueLibsCore.DisasterBuilder.RemovalMutator">
+            <summary>
+              <para>Gets the disaster's removal mutator unlock.</para>
             </summary>
         </member>
         <member name="M:RogueLibsCore.DisasterBuilder.WithName(RogueLibsCore.CustomNameInfo)">
@@ -3558,13 +4447,13 @@
               <para>Represents a <see cref="T:RogueLibsCore.CustomEffect"/> builder, that attaches additional information to the effect.</para>
             </summary>
         </member>
-        <member name="M:RogueLibsCore.EffectBuilder.#ctor(RogueLibsCore.EffectInfo)">
+        <member name="M:RogueLibsCore.EffectBuilder.#ctor(RogueLibsCore.CustomEffectMetadata)">
             <summary>
-              <para>Initializes a new instance of the <see cref="T:RogueLibsCore.EffectBuilder"/> class with the specified <paramref name="info"/>.</para>
+              <para>Initializes a new instance of the <see cref="T:RogueLibsCore.EffectBuilder"/> class with the specified <paramref name="metadata"/>.</para>
             </summary>
-            <param name="info">The effect metadata to use.</param>
+            <param name="metadata">The effect metadata to use.</param>
         </member>
-        <member name="P:RogueLibsCore.EffectBuilder.Info">
+        <member name="P:RogueLibsCore.EffectBuilder.Metadata">
             <summary>
               <para>The used effect metadata.</para>
             </summary>
@@ -3626,13 +4515,13 @@
               <para>Represents a <see cref="T:RogueLibsCore.CustomItem"/> builder, that attaches additional information to the item.</para>
             </summary>
         </member>
-        <member name="M:RogueLibsCore.ItemBuilder.#ctor(RogueLibsCore.ItemInfo)">
+        <member name="M:RogueLibsCore.ItemBuilder.#ctor(RogueLibsCore.CustomItemMetadata)">
             <summary>
-              <para>Initializes a new instance of the <see cref="T:RogueLibsCore.ItemBuilder"/> class with the specified <paramref name="info"/>.</para>
+              <para>Initializes a new instance of the <see cref="T:RogueLibsCore.ItemBuilder"/> class with the specified <paramref name="metadata"/>.</para>
             </summary>
-            <param name="info">The item metadata to use.</param>
+            <param name="metadata">The item metadata to use.</param>
         </member>
-        <member name="P:RogueLibsCore.ItemBuilder.Info">
+        <member name="P:RogueLibsCore.ItemBuilder.Metadata">
             <summary>
               <para>The used item metadata.</para>
             </summary>
@@ -3718,13 +4607,13 @@
               <para>Represents a <see cref="T:RogueLibsCore.CustomTrait"/> builder, that attaches additional information to the trait.</para>
             </summary>
         </member>
-        <member name="M:RogueLibsCore.TraitBuilder.#ctor(RogueLibsCore.TraitInfo)">
+        <member name="M:RogueLibsCore.TraitBuilder.#ctor(RogueLibsCore.CustomTraitMetadata)">
             <summary>
-              <para>Initializes a new instance of the <see cref="T:RogueLibsCore.TraitBuilder"/> class with the specified <paramref name="info"/>.</para>
+              <para>Initializes a new instance of the <see cref="T:RogueLibsCore.TraitBuilder"/> class with the specified <paramref name="metadata"/>.</para>
             </summary>
-            <param name="info">The trait metadata to use.</param>
+            <param name="metadata">The trait metadata to use.</param>
         </member>
-        <member name="P:RogueLibsCore.TraitBuilder.Info">
+        <member name="P:RogueLibsCore.TraitBuilder.Metadata">
             <summary>
               <para>The used trait metadata.</para>
             </summary>
@@ -3867,7 +4756,7 @@
               <para>Gets the index of the current level (0-2 - Slums, 3-5 - Industrial, 6-8 - Park, 9-11 - Downtown, 12-14 - Uptown, 15 - Mayor Village (or 0-1, 2-3, 4-5, 6-7, 8-9 if Quick Game is on), and more in Endless mode).</para>
             </summary>
         </member>
-        <member name="P:RogueLibsCore.CustomDisaster.DisasterInfo">
+        <member name="P:RogueLibsCore.CustomDisaster.Metadata">
             <summary>
               <para>Gets the custom disaster's metadata.</para>
             </summary>
@@ -3910,41 +4799,41 @@
             </summary>
             <returns>The enumerator representing the custom disaster's updating coroutine.</returns>
         </member>
-        <member name="T:RogueLibsCore.DisasterInfo">
+        <member name="T:RogueLibsCore.CustomDisasterMetadata">
             <summary>
               <para>Represents the <see cref="T:RogueLibsCore.CustomDisaster"/> type metadata.</para>
             </summary>
         </member>
-        <member name="P:RogueLibsCore.DisasterInfo.Name">
+        <member name="P:RogueLibsCore.CustomDisasterMetadata.Name">
             <summary>
               <para>Gets the custom disaster's name.</para>
             </summary>
         </member>
-        <member name="M:RogueLibsCore.DisasterInfo.GetName">
+        <member name="M:RogueLibsCore.CustomDisasterMetadata.GetName">
             <summary>
               <para>Returns a <see cref="T:RogueLibsCore.CustomName"/> associated with this disaster's name.</para>
             </summary>
             <returns>The <see cref="T:RogueLibsCore.CustomName"/> associated with this disaster's name, if found; otherwise, <see langword="null"/>.</returns>
         </member>
-        <member name="M:RogueLibsCore.DisasterInfo.GetDescription">
+        <member name="M:RogueLibsCore.CustomDisasterMetadata.GetDescription">
             <summary>
               <para>Returns a <see cref="T:RogueLibsCore.CustomName"/> associated with this disaster's description.</para>
             </summary>
             <returns>The <see cref="T:RogueLibsCore.CustomName"/> associated with this disaster's description, if found; otherwise, <see langword="null"/>.</returns>
         </member>
-        <member name="M:RogueLibsCore.DisasterInfo.GetMessage1">
+        <member name="M:RogueLibsCore.CustomDisasterMetadata.GetMessage1">
             <summary>
               <para>Returns a <see cref="T:RogueLibsCore.CustomName"/> associated with this disaster's first message.</para>
             </summary>
             <returns>The <see cref="T:RogueLibsCore.CustomName"/> associated with this disaster's first message, if found; otherwise, <see langword="null"/>.</returns>
         </member>
-        <member name="M:RogueLibsCore.DisasterInfo.GetMessage2">
+        <member name="M:RogueLibsCore.CustomDisasterMetadata.GetMessage2">
             <summary>
               <para>Returns a <see cref="T:RogueLibsCore.CustomName"/> associated with this disaster's second message.</para>
             </summary>
             <returns>The <see cref="T:RogueLibsCore.CustomName"/> associated with this disaster's second message, if found; otherwise, <see langword="null"/>.</returns>
         </member>
-        <member name="M:RogueLibsCore.DisasterInfo.Get(System.Type)">
+        <member name="M:RogueLibsCore.CustomDisasterMetadata.Get(System.Type)">
             <summary>
               <para>Gets the specified <see cref="T:RogueLibsCore.CustomDisaster"/> <paramref name="type"/>'s metadata.</para>
             </summary>
@@ -3952,7 +4841,7 @@
             <returns>The specified <paramref name="type"/>'s metadata.</returns>
             <exception cref="T:System.ArgumentException"><paramref name="type"/> is not a <see cref="T:RogueLibsCore.CustomDisaster"/>.</exception>
         </member>
-        <member name="M:RogueLibsCore.DisasterInfo.Get``1">
+        <member name="M:RogueLibsCore.CustomDisasterMetadata.Get``1">
             <summary>
               <para>Gets the specified <typeparamref name="TDisaster"/>'s metadata.</para>
             </summary>
@@ -4212,12 +5101,12 @@
             <param name="code">The language code to get a name for.</param>
             <returns>The specified language <paramref name="code"/>'s name, if found; otherwise, <see langword="null"/>.</returns>
         </member>
-        <member name="M:RogueLibsCore.LanguageService.RegisterLanguageCode(System.String,RogueLibsCore.LanguageCode)">
+        <member name="M:RogueLibsCore.LanguageService.RegisterLanguageCode(System.String)">
             <summary>
-              <para>Adds the specified <paramref name="languageName"/> to the game, and sets its language <paramref name="code"/>.</para>
+              <para>Adds the specified <paramref name="languageName"/> to the game, and returns its registered <see cref="T:RogueLibsCore.LanguageCode"/> value.</para>
             </summary>
             <param name="languageName">The language name to add into the game.</param>
-            <param name="code">The language code that will be used to represent the language.</param>
+            <returns>The language code that will be used to represent the language.</returns>
         </member>
         <member name="M:RogueLibsCore.LanguageService.GetCurrent(RogueLibsCore.IName)">
             <summary>
@@ -4460,318 +5349,26 @@
             <param name="unlockType">The type of the unlock to unlock.</param>
             <exception cref="T:System.ArgumentNullException"><paramref name="unlocks"/> is <see langword="null"/>.</exception>
         </member>
-        <member name="T:RogueLibsCore.RogueFramework">
+        <member name="T:RogueLibsCore.Properties.Resources">
             <summary>
-              <para>Represents the internal workings of RogueLibs.</para>
+              A strongly-typed resource class, for looking up localized strings, etc.
             </summary>
         </member>
-        <member name="P:RogueLibsCore.RogueFramework.Plugin">
+        <member name="P:RogueLibsCore.Properties.Resources.ResourceManager">
             <summary>
-              <para>The RogueLibs' plugin instance.</para>
+              Returns the cached ResourceManager instance used by this class.
             </summary>
         </member>
-        <member name="P:RogueLibsCore.RogueFramework.Debug">
+        <member name="P:RogueLibsCore.Properties.Resources.Culture">
             <summary>
-              <para>Determines whether RogueLibs was compiled in the Debug configuration.</para>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
             </summary>
         </member>
-        <member name="P:RogueLibsCore.RogueFramework.DebugFlags">
+        <member name="P:RogueLibsCore.Properties.Resources.RogueLibsPatcher">
             <summary>
-              <para>Determines the RogueLibs' enabled debugging flags.</para>
+              Looks up a localized resource of type System.Byte[].
             </summary>
-        </member>
-        <member name="M:RogueLibsCore.RogueFramework.IsDebugEnabled(RogueLibsCore.DebugFlags)">
-            <summary>
-              <para>Determines whether any of the specified <paramref name="flags"/> is enabled.</para>
-            </summary>
-            <param name="flags">The flags to test for.</param>
-            <returns><see langword="true"/>, if any of the specified <paramref name="flags"/> is enabled; otherwise, <see langword="false"/>.</returns>
-        </member>
-        <member name="F:RogueLibsCore.RogueFramework.ItemFactories">
-            <summary>
-              <para>The list of item hook factories, used by RogueLibs.</para>
-            </summary>
-        </member>
-        <member name="F:RogueLibsCore.RogueFramework.TraitFactories">
-            <summary>
-              <para>The list of trait hook factories, used by RogueLibs.</para>
-            </summary>
-        </member>
-        <member name="F:RogueLibsCore.RogueFramework.EffectFactories">
-            <summary>
-              <para>The list of effect hook factories, used by RogueLibs.</para>
-            </summary>
-        </member>
-        <member name="F:RogueLibsCore.RogueFramework.ObjectFactories">
-            <summary>
-              <para>The list of object hook factories, used by RogueLibs.</para>
-            </summary>
-        </member>
-        <member name="F:RogueLibsCore.RogueFramework.NameProviders">
-            <summary>
-              <para>The list of name providers, used by RogueLibs.</para>
-            </summary>
-        </member>
-        <member name="F:RogueLibsCore.RogueFramework.Unlocks">
-            <summary>
-              <para>The list of all unlocks in the game, including the vanilla ones too.</para>
-            </summary>
-        </member>
-        <member name="F:RogueLibsCore.RogueFramework.CustomDisasters">
-            <summary>
-              <para>The list of all custom disasters, that will be used in the game.</para>
-            </summary>
-        </member>
-        <member name="M:RogueLibsCore.RogueFramework.GetActiveDisaster">
-            <summary>
-              <para>Returns the currently active custom disaster.</para>
-            </summary>
-            <returns>The currently active instance of <see cref="T:RogueLibsCore.CustomDisaster"/>, if there is one; otherwise, <see langword="null"/>.</returns>
-        </member>
-        <member name="F:RogueLibsCore.RogueFramework.ExtraSprites">
-            <summary>
-              <para>The list of extra sprites, that will be used if a sprite is not found in the appropriate collection.</para>
-            </summary>
-        </member>
-        <member name="P:RogueLibsCore.RogueFramework.ItemSprites">
-            <summary>
-              <para>The <see cref="T:tk2dSpriteCollectionData"/> that contains the item sprites, or <see langword="null"/>, if it's not initialized yet.</para>
-            </summary>
-        </member>
-        <member name="P:RogueLibsCore.RogueFramework.ObjectSprites">
-            <summary>
-              <para>The <see cref="T:tk2dSpriteCollectionData"/> that contains the object sprites, or <see langword="null"/>, if it's not initialized yet.</para>
-            </summary>
-        </member>
-        <member name="P:RogueLibsCore.RogueFramework.FloorSprites">
-            <summary>
-              <para>The <see cref="T:tk2dSpriteCollectionData"/> that contains the floor sprites, or <see langword="null"/>, if it's not initialized yet.</para>
-            </summary>
-        </member>
-        <member name="P:RogueLibsCore.RogueFramework.BulletSprites">
-            <summary>
-              <para>The <see cref="T:tk2dSpriteCollectionData"/> that contains the projectile sprites, or <see langword="null"/>, if it's not initialized yet.</para>
-            </summary>
-        </member>
-        <member name="P:RogueLibsCore.RogueFramework.HairSprites">
-            <summary>
-              <para>The <see cref="T:tk2dSpriteCollectionData"/> that contains the hair sprites, or <see langword="null"/>, if it's not initialized yet.</para>
-            </summary>
-        </member>
-        <member name="P:RogueLibsCore.RogueFramework.FacialHairSprites">
-            <summary>
-              <para>The <see cref="T:tk2dSpriteCollectionData"/> that contains the facial hair sprites, or <see langword="null"/>, if it's not initialized yet.</para>
-            </summary>
-        </member>
-        <member name="P:RogueLibsCore.RogueFramework.HeadPieceSprites">
-            <summary>
-              <para>The <see cref="T:tk2dSpriteCollectionData"/> that contains the head piece sprites, or <see langword="null"/>, if it's not initialized yet.</para>
-            </summary>
-        </member>
-        <member name="P:RogueLibsCore.RogueFramework.AgentSprites">
-            <summary>
-              <para>The <see cref="T:tk2dSpriteCollectionData"/> that contains the agent sprites, or <see langword="null"/>, if it's not initialized yet.</para>
-            </summary>
-        </member>
-        <member name="P:RogueLibsCore.RogueFramework.BodySprites">
-            <summary>
-              <para>The <see cref="T:tk2dSpriteCollectionData"/> that contains the agent body sprites, or <see langword="null"/>, if it's not initialized yet.</para>
-            </summary>
-        </member>
-        <member name="P:RogueLibsCore.RogueFramework.WreckageSprites">
-            <summary>
-              <para>The <see cref="T:tk2dSpriteCollectionData"/> that contains the wreckage sprites, or <see langword="null"/>, if it's not initialized yet.</para>
-            </summary>
-        </member>
-        <member name="P:RogueLibsCore.RogueFramework.InterfaceSprites">
-            <summary>
-              <para>The <see cref="T:tk2dSpriteCollectionData"/> that contains the interface sprites, or <see langword="null"/>, if it's not initialized yet.</para>
-            </summary>
-        </member>
-        <member name="P:RogueLibsCore.RogueFramework.DecalSprites">
-            <summary>
-              <para>The <see cref="T:tk2dSpriteCollectionData"/> that contains the decal sprites, or <see langword="null"/>, if it's not initialized yet.</para>
-            </summary>
-        </member>
-        <member name="P:RogueLibsCore.RogueFramework.WallTopSprites">
-            <summary>
-              <para>The <see cref="T:tk2dSpriteCollectionData"/> that contains the wall top sprites, or <see langword="null"/>, if it's not initialized yet.</para>
-            </summary>
-        </member>
-        <member name="P:RogueLibsCore.RogueFramework.WallSprites">
-            <summary>
-              <para>The <see cref="T:tk2dSpriteCollectionData"/> that contains the wall sprites, or <see langword="null"/>, if it's not initialized yet.</para>
-            </summary>
-        </member>
-        <member name="P:RogueLibsCore.RogueFramework.SpawnerSprites">
-            <summary>
-              <para>The <see cref="T:tk2dSpriteCollectionData"/> that contains the spawner sprites, used in the Level Editor, or <see langword="null"/>, if it's not initialized yet.</para>
-            </summary>
-        </member>
-        <member name="P:RogueLibsCore.RogueFramework.ShadowSprites">
-            <summary>
-              <para>The <see cref="T:tk2dSpriteCollectionData"/> that contains the shadow sprites, or <see langword="null"/>, if it's not initialized yet.</para>
-            </summary>
-        </member>
-        <member name="P:RogueLibsCore.RogueFramework.TileShadowSprites">
-            <summary>
-              <para>The <see cref="T:tk2dSpriteCollectionData"/> that contains the tile shadow sprites, or <see langword="null"/>, if it's not initialized yet.</para>
-            </summary>
-        </member>
-        <member name="T:RogueLibsCore.RogueLibs">
-            <summary>
-              <para>Main RogueLibs class, that is used to initialize custom content.</para>
-            </summary>
-        </member>
-        <member name="F:RogueLibsCore.RogueLibs.GUID">
-            <summary>
-              <para>RogueLibs' GUID.</para>
-            </summary>
-        </member>
-        <member name="F:RogueLibsCore.RogueLibs.Name">
-            <summary>
-              <para>RogueLibs' Name.</para>
-            </summary>
-        </member>
-        <member name="F:RogueLibsCore.RogueLibs.CompiledVersion">
-            <summary>
-              <para>Version of RogueLibs that the current assembly is compiled with.</para>
-            </summary>
-        </member>
-        <member name="F:RogueLibsCore.RogueLibs.CompiledSemanticVersion">
-            <summary>
-              <para>Semantic version of RogueLibs that the current assembly is compiled with. Don't use it in BepInPlugin.</para>
-            </summary>
-        </member>
-        <member name="P:RogueLibsCore.RogueLibs.Version">
-            <summary>
-              <para>Currently installed and running version of RogueLibs.</para>
-            </summary>
-        </member>
-        <member name="P:RogueLibsCore.RogueLibs.SemanticVersion">
-            <summary>
-              <para>Currently installed and running semantic version of RogueLibs.</para>
-            </summary>
-        </member>
-        <member name="M:RogueLibsCore.RogueLibs.CreateCustomItem``1">
-            <summary>
-              <para>Creates a <typeparamref name="TItem"/> custom item. Chain "With" methods to attach extra information.</para>
-            </summary>
-            <typeparam name="TItem">The <see cref="T:RogueLibsCore.CustomItem"/> type. Must have a parameterless constructor.</typeparam>
-            <returns>An <see cref="T:RogueLibsCore.ItemBuilder"/> with the specified item's metadata.</returns>
-        </member>
-        <member name="M:RogueLibsCore.RogueLibs.CreateCustomAbility``1">
-            <summary>
-              <para>Creates a <typeparamref name="TAbility"/> custom ability. Chain "With" methods to attach extra information.</para>
-            </summary>
-            <typeparam name="TAbility">The <see cref="T:RogueLibsCore.CustomAbility"/> type. Must have a parameterless constructor.</typeparam>
-            <returns>An <see cref="T:RogueLibsCore.AbilityBuilder"/> with the specified ability's metadata.</returns>
-        </member>
-        <member name="M:RogueLibsCore.RogueLibs.CreateCustomTrait``1">
-            <summary>
-              <para>Creates a <typeparamref name="TTrait"/> custom trait. Chain "With" methods to attach extra information.</para>
-            </summary>
-            <typeparam name="TTrait">The <see cref="T:RogueLibsCore.CustomTrait"/> type. Must have a parameterless constructor.</typeparam>
-            <returns>An <see cref="T:RogueLibsCore.TraitBuilder"/> with the specified trait's metadata.</returns>
-        </member>
-        <member name="M:RogueLibsCore.RogueLibs.CreateCustomEffect``1">
-            <summary>
-              <para>Creates a <typeparamref name="TEffect"/> custom effect. Chain "With" methods to attach extra information.</para>
-            </summary>
-            <typeparam name="TEffect">The <see cref="T:RogueLibsCore.CustomEffect"/> type. Must have a parameterless constructor.</typeparam>
-            <returns>An <see cref="T:RogueLibsCore.EffectBuilder"/> with the specified effect's metadata.</returns>
-        </member>
-        <member name="M:RogueLibsCore.RogueLibs.CreateCustomDisaster``1">
-            <summary>
-              <para>Creates a <typeparamref name="TDisaster"/> custom disaster. Chain "With" methods to attach extra information.</para>
-            </summary>
-            <typeparam name="TDisaster">The <see cref="T:RogueLibsCore.CustomDisaster"/> type. Must have a parameterless constructor.</typeparam>
-            <returns>An <see cref="T:RogueLibsCore.DisasterBuilder"/> with the specified disaster's metadata.</returns>
-        </member>
-        <member name="M:RogueLibsCore.RogueLibs.CreateCustomSprite(System.String,RogueLibsCore.SpriteScope,System.Byte[],System.Single)">
-            <summary>
-              <para>Creates a <see cref="T:RogueLibsCore.RogueSprite"/> with the specified <paramref name="name"/>, <paramref name="scope"/>, with a texture from <paramref name="rawData"/> with the specified <paramref name="ppu"/>.</para>
-            </summary>
-            <param name="name">The custom sprite's name.</param>
-            <param name="scope">The custom sprite's scope.</param>
-            <param name="rawData">The byte array containing a raw PNG- or JPEG-encoded image.</param>
-            <param name="ppu">The pixels-per-unit of the custom sprite's texture.</param>
-            <returns>The created <see cref="T:RogueLibsCore.RogueSprite"/>.</returns>
-            <exception cref="T:System.ArgumentNullException"><paramref name="name"/> or <paramref name="rawData"/> is <see langword="null"/>.</exception>
-            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="ppu"/> is less than or equal to 0.</exception>
-        </member>
-        <member name="M:RogueLibsCore.RogueLibs.CreateCustomSprite(System.String,RogueLibsCore.SpriteScope,System.Byte[],UnityEngine.Rect,System.Single)">
-            <summary>
-              <para>Creates a <see cref="T:RogueLibsCore.RogueSprite"/> with the specified <paramref name="name"/>, <paramref name="scope"/>, with a texture from <paramref name="rawData"/> with the specified <paramref name="ppu"/>.</para>
-            </summary>
-            <param name="name">The custom sprite's name.</param>
-            <param name="scope">The custom sprite's scope.</param>
-            <param name="rawData">The byte array containing a raw PNG- or JPEG-encoded image.</param>
-            <param name="region">The region of the texture for the sprite to use.</param>
-            <param name="ppu">The pixels-per-unit of the custom sprite's texture.</param>
-            <returns>The created <see cref="T:RogueLibsCore.RogueSprite"/>.</returns>
-            <exception cref="T:System.ArgumentNullException"><paramref name="name"/> or <paramref name="rawData"/> is <see langword="null"/>.</exception>
-            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="ppu"/> is less than or equal to 0.</exception>
-        </member>
-        <member name="M:RogueLibsCore.RogueLibs.CreateCustomAudio(System.String,System.Byte[],UnityEngine.AudioType)">
-            <summary>
-              <para>Creates a custom <see cref="T:UnityEngine.AudioClip"/> from <paramref name="rawData"/> using the specified audio <paramref name="format"/> and adds it to the game under the specified <paramref name="name"/>.</para>
-            </summary>
-            <param name="name">The name of the clip.</param>
-            <param name="rawData">The byte array containing a raw audio file.</param>
-            <param name="format">The audio file's format.</param>
-            <returns>The created <see cref="T:UnityEngine.AudioClip"/>.</returns>
-            <exception cref="T:System.IO.IOException">An I/O error occurred while opening the file.</exception>
-            <exception cref="T:System.UnauthorizedAccessException">The caller does not have the required permission.</exception>
-            <exception cref="T:System.NotSupportedException">The specified <paramref name="format"/> is not supported.</exception>
-            <exception cref="T:System.Security.SecurityException">The caller does not have the required permission.</exception>
-        </member>
-        <member name="M:RogueLibsCore.RogueLibs.CreateCustomName(System.String,System.String,RogueLibsCore.CustomNameInfo)">
-            <summary>
-              <para>Creates a localizable string with the specified <paramref name="name"/>, <paramref name="type"/> and localization <paramref name="info"/>.</para>
-            </summary>
-            <param name="name">The name of the localizable string to create.</param>
-            <param name="type">The type of the localizable string to create.</param>
-            <param name="info">The localization data to initialize the localizable string with.</param>
-            <returns>The created <see cref="T:RogueLibsCore.CustomName"/>.</returns>
-            <exception cref="T:System.ArgumentNullException"><paramref name="name"/> or <paramref name="type"/> is <see langword="null"/>.</exception>
-            <exception cref="T:System.ArgumentException">A localizable string with the specified <paramref name="name"/> and <paramref name="type"/> already exists in the <see cref="T:RogueLibsCore.CustomNameProvider"/>'s dictionary.</exception>
-        </member>
-        <member name="M:RogueLibsCore.RogueLibs.CreateCustomUnlock(RogueLibsCore.UnlockWrapper)">
-            <summary>
-              <para>Integrates the specified <paramref name="unlock"/> into the game.</para>
-            </summary>
-            <param name="unlock">The unlock to integrate into the game.</param>
-            <exception cref="T:System.ArgumentNullException"><paramref name="unlock"/> is <see langword="null"/>.</exception>
-        </member>
-        <member name="M:RogueLibsCore.RogueLibs.GetUnlock(System.String,System.String)">
-            <summary>
-              <para>Gets an unlock with the specified <paramref name="name"/> and <paramref name="type"/>.</para>
-            </summary>
-            <param name="name">The name of the unlock to search for.</param>
-            <param name="type">The type of the unlock to search for.</param>
-            <returns>The unlock with the specified <paramref name="name"/> and <paramref name="type"/>, if found; otherwise, <see langword="null"/>.</returns>
-        </member>
-        <member name="M:RogueLibsCore.RogueLibs.GetUnlock``1(System.String)">
-            <summary>
-              <para>Gets an unlock of the specified <typeparamref name="TUnlock"/> type and with the specified <paramref name="name"/>.</para>
-            </summary>
-            <typeparam name="TUnlock">The type of the unlock to search for.</typeparam>
-            <param name="name">The name of the unlock to search for.</param>
-            <returns>The unlock of the specified <typeparamref name="TUnlock"/> type and with the specified <paramref name="name"/>, if found; otherwise, <see langword="null"/>.</returns>
-        </member>
-        <member name="M:RogueLibsCore.RogueLibs.LoadFromAssembly">
-            <summary>
-              <para>Invokes all static methods marked with a <see cref="T:RogueLibsCore.RLSetupAttribute"/> in the current assembly.</para>
-            </summary>
-        </member>
-        <member name="M:RogueLibsCore.RogueLibs.CreateVersionText(System.String,System.String)">
-            <summary>
-              <para>Creates a <see cref="T:RogueLibsCore.VersionText"/>, that is displayed in the bottom-left corner, with the specified unique <paramref name="id"/> and initializes it with the specified <paramref name="text"/> value.</para>
-            </summary>
-            <param name="id">The unique identifier representing the <see cref="T:RogueLibsCore.VersionText"/>.</param>
-            <param name="text">The value to initialize the <see cref="T:RogueLibsCore.VersionText"/> with.</param>
-            <returns>The created <see cref="T:RogueLibsCore.VersionText"/>.</returns>
         </member>
         <member name="T:RogueLibsCore.RogueSprite">
             <summary>
@@ -4826,6 +5423,14 @@
             <summary>
               <para>A read-only collection of all values in the <see cref="T:RogueLibsCore.SpriteScope"/> enumeration, including <see cref="F:RogueLibsCore.SpriteScope.None"/>.</para>
             </summary>
+        </member>
+        <member name="M:RogueLibsCore.RogueSprite.LoadTexture(System.Byte[],System.String)">
+            <summary>
+              <para>Loads a texture from the specified <paramref name="rawData"/>, and if one wasn't created earlier, sets its name to <paramref name="textureName"/>.<br/>Can be used before any sprite initializations to define the texture's name (the first sprite's name is used by default).</para>
+            </summary>
+            <param name="rawData">The byte array containing a raw PNG- or JPEG-encoded image.</param>
+            <param name="textureName">The texture name to set, if the texture hasn't been loaded before.</param>
+            <returns>The loaded texture.</returns>
         </member>
         <member name="M:RogueLibsCore.RogueSprite.Define">
             <summary>
@@ -5035,324 +5640,6 @@
             <summary>
               <para>Gets or sets the agent that caused this effect.</para>
             </summary>
-        </member>
-        <member name="T:RogueLibsCore.HookExtensions">
-            <summary>
-              <para>The collection of hook extensions.</para>
-            </summary>
-        </member>
-        <member name="M:RogueLibsCore.HookExtensions.AddHook(InvItem,RogueLibsCore.IHook{InvItem})">
-            <summary>
-              <para>Attaches the specified <paramref name="hook"/> to the current <paramref name="instance"/>.</para>
-            </summary>
-            <param name="instance">The instance of a hookable type.</param>
-            <param name="hook">The hook to attach to the <paramref name="instance"/>.</param>
-            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> or <paramref name="hook"/> is <see langword="null"/>.</exception>
-        </member>
-        <member name="M:RogueLibsCore.HookExtensions.AddHook(PlayfieldObject,RogueLibsCore.IHook{PlayfieldObject})">
-            <summary>
-              <para>Attaches the specified <paramref name="hook"/> to the current <paramref name="instance"/>.</para>
-            </summary>
-            <param name="instance">The instance of a hookable type.</param>
-            <param name="hook">The hook to attach to the <paramref name="instance"/>.</param>
-            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> or <paramref name="hook"/> is <see langword="null"/>.</exception>
-        </member>
-        <member name="M:RogueLibsCore.HookExtensions.AddHook(StatusEffect,RogueLibsCore.IHook{StatusEffect})">
-            <summary>
-              <para>Attaches the specified <paramref name="hook"/> to the current <paramref name="instance"/>.</para>
-            </summary>
-            <param name="instance">The instance of a hookable type.</param>
-            <param name="hook">The hook to attach to the <paramref name="instance"/>.</param>
-            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> or <paramref name="hook"/> is <see langword="null"/>.</exception>
-        </member>
-        <member name="M:RogueLibsCore.HookExtensions.AddHook(Trait,RogueLibsCore.IHook{Trait})">
-            <summary>
-              <para>Attaches the specified <paramref name="hook"/> to the current <paramref name="instance"/>.</para>
-            </summary>
-            <param name="instance">The instance of a hookable type.</param>
-            <param name="hook">The hook to attach to the <paramref name="instance"/>.</param>
-            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> or <paramref name="hook"/> is <see langword="null"/>.</exception>
-        </member>
-        <member name="M:RogueLibsCore.HookExtensions.AddHook``1(InvItem)">
-            <summary>
-              <para>Creates a hook of the specified <typeparamref name="THook"/> type and attaches it to the current <paramref name="instance"/>.</para>
-            </summary>
-            <typeparam name="THook">The type of the hook to create and attach to the <paramref name="instance"/>.</typeparam>
-            <param name="instance">The instance of a hookable type.</param>
-            <returns>The created hook.</returns>
-            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> is <see langword="null"/>.</exception>
-        </member>
-        <member name="M:RogueLibsCore.HookExtensions.AddHook``1(PlayfieldObject)">
-            <summary>
-              <para>Creates a hook of the specified <typeparamref name="THook"/> type and attaches it to the current <paramref name="instance"/>.</para>
-            </summary>
-            <typeparam name="THook">The type of the hook to create and attach to the <paramref name="instance"/>.</typeparam>
-            <param name="instance">The instance of a hookable type.</param>
-            <returns>The created hook.</returns>
-            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> is <see langword="null"/>.</exception>
-        </member>
-        <member name="M:RogueLibsCore.HookExtensions.AddHook``1(StatusEffect)">
-            <summary>
-              <para>Creates a hook of the specified <typeparamref name="THook"/> type and attaches it to the current <paramref name="instance"/>.</para>
-            </summary>
-            <typeparam name="THook">The type of the hook to create and attach to the <paramref name="instance"/>.</typeparam>
-            <param name="instance">The instance of a hookable type.</param>
-            <returns>The created hook.</returns>
-            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> is <see langword="null"/>.</exception>
-        </member>
-        <member name="M:RogueLibsCore.HookExtensions.AddHook``1(Trait)">
-            <summary>
-              <para>Creates a hook of the specified <typeparamref name="THook"/> type and attaches it to the current <paramref name="instance"/>.</para>
-            </summary>
-            <typeparam name="THook">The type of the hook to create and attach to the <paramref name="instance"/>.</typeparam>
-            <param name="instance">The instance of a hookable type.</param>
-            <returns>The created hook.</returns>
-            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> is <see langword="null"/>.</exception>
-        </member>
-        <member name="M:RogueLibsCore.HookExtensions.RemoveHook(InvItem,RogueLibsCore.IHook{InvItem})">
-            <summary>
-              <para>Detaches the specified <paramref name="hook"/> from the current <paramref name="instance"/>.</para>
-            </summary>
-            <param name="instance">The instance of a hookable type.</param>
-            <param name="hook">The hook to detach from the <paramref name="instance"/>.</param>
-            <returns><see langword="true"/>, if the hook was successfully detached; otherwise, <see langword="false"/>.</returns>
-            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> is <see langword="null"/>.</exception>
-        </member>
-        <member name="M:RogueLibsCore.HookExtensions.RemoveHook(PlayfieldObject,RogueLibsCore.IHook{PlayfieldObject})">
-            <summary>
-              <para>Detaches the specified <paramref name="hook"/> from the current <paramref name="instance"/>.</para>
-            </summary>
-            <param name="instance">The instance of a hookable type.</param>
-            <param name="hook">The hook to detach from the <paramref name="instance"/>.</param>
-            <returns><see langword="true"/>, if the hook was successfully detached; otherwise, <see langword="false"/>.</returns>
-            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> is <see langword="null"/>.</exception>
-        </member>
-        <member name="M:RogueLibsCore.HookExtensions.RemoveHook(StatusEffect,RogueLibsCore.IHook{StatusEffect})">
-            <summary>
-              <para>Detaches the specified <paramref name="hook"/> from the current <paramref name="instance"/>.</para>
-            </summary>
-            <param name="instance">The instance of a hookable type.</param>
-            <param name="hook">The hook to detach from the <paramref name="instance"/>.</param>
-            <returns><see langword="true"/>, if the hook was successfully detached; otherwise, <see langword="false"/>.</returns>
-            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> is <see langword="null"/>.</exception>
-        </member>
-        <member name="M:RogueLibsCore.HookExtensions.RemoveHook(Trait,RogueLibsCore.IHook{Trait})">
-            <summary>
-              <para>Detaches the specified <paramref name="hook"/> from the current <paramref name="instance"/>.</para>
-            </summary>
-            <param name="instance">The instance of a hookable type.</param>
-            <param name="hook">The hook to detach from the <paramref name="instance"/>.</param>
-            <returns><see langword="true"/>, if the hook was successfully detached; otherwise, <see langword="false"/>.</returns>
-            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> is <see langword="null"/>.</exception>
-        </member>
-        <member name="M:RogueLibsCore.HookExtensions.RemoveHook``1(InvItem)">
-            <summary>
-              <para>Detaches a hook of the specified <typeparamref name="THook"/> type from the current <paramref name="instance"/>.</para>
-            </summary>
-            <typeparam name="THook">The type of a hook to detach from the <paramref name="instance"/>.</typeparam>
-            <param name="instance">The instance of a hookable type.</param>
-            <returns><see langword="true"/>, if a hook was successfully detached; otherwise, <see langword="false"/>.</returns>
-            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> is <see langword="null"/>.</exception>
-        </member>
-        <member name="M:RogueLibsCore.HookExtensions.RemoveHook``1(PlayfieldObject)">
-            <summary>
-              <para>Detaches a hook of the specified <typeparamref name="THook"/> type from the current <paramref name="instance"/>.</para>
-            </summary>
-            <typeparam name="THook">The type of a hook to detach from the <paramref name="instance"/>.</typeparam>
-            <param name="instance">The instance of a hookable type.</param>
-            <returns><see langword="true"/>, if a hook was successfully detached; otherwise, <see langword="false"/>.</returns>
-            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> is <see langword="null"/>.</exception>
-        </member>
-        <member name="M:RogueLibsCore.HookExtensions.RemoveHook``1(StatusEffect)">
-            <summary>
-              <para>Detaches a hook of the specified <typeparamref name="THook"/> type from the current <paramref name="instance"/>.</para>
-            </summary>
-            <typeparam name="THook">The type of a hook to detach from the <paramref name="instance"/>.</typeparam>
-            <param name="instance">The instance of a hookable type.</param>
-            <returns><see langword="true"/>, if a hook was successfully detached; otherwise, <see langword="false"/>.</returns>
-            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> is <see langword="null"/>.</exception>
-        </member>
-        <member name="M:RogueLibsCore.HookExtensions.RemoveHook``1(Trait)">
-            <summary>
-              <para>Detaches a hook of the specified <typeparamref name="THook"/> type from the current <paramref name="instance"/>.</para>
-            </summary>
-            <typeparam name="THook">The type of a hook to detach from the <paramref name="instance"/>.</typeparam>
-            <param name="instance">The instance of a hookable type.</param>
-            <returns><see langword="true"/>, if a hook was successfully detached; otherwise, <see langword="false"/>.</returns>
-            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> is <see langword="null"/>.</exception>
-        </member>
-        <member name="M:RogueLibsCore.HookExtensions.GetHook``1(InvItem)">
-            <summary>
-              <para>Returns a hook attached to the current <paramref name="instance"/>, that is assignable to a variable of <typeparamref name="THook"/> type.</para>
-            </summary>
-            <typeparam name="THook">The type of a hook to search for.</typeparam>
-            <param name="instance">The instance of a hookable type.</param>
-            <returns>The hook that is assignable to a variable of <typeparamref name="THook"/> type, if found; otherwise, <see langword="default"/>.</returns>
-            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> is <see langword="null"/>.</exception>
-        </member>
-        <member name="M:RogueLibsCore.HookExtensions.GetHook``1(PlayfieldObject)">
-            <summary>
-              <para>Returns a hook attached to the current <paramref name="instance"/>, that is assignable to a variable of <typeparamref name="THook"/> type.</para>
-            </summary>
-            <typeparam name="THook">The type of a hook to search for.</typeparam>
-            <param name="instance">The instance of a hookable type.</param>
-            <returns>The hook that is assignable to a variable of <typeparamref name="THook"/> type, if found; otherwise, <see langword="default"/>.</returns>
-            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> is <see langword="null"/>.</exception>
-        </member>
-        <member name="M:RogueLibsCore.HookExtensions.GetHook``1(StatusEffect)">
-            <summary>
-              <para>Returns a hook attached to the current <paramref name="instance"/>, that is assignable to a variable of <typeparamref name="THook"/> type.</para>
-            </summary>
-            <typeparam name="THook">The type of a hook to search for.</typeparam>
-            <param name="instance">The instance of a hookable type.</param>
-            <returns>The hook that is assignable to a variable of <typeparamref name="THook"/> type, if found; otherwise, <see langword="default"/>.</returns>
-            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> is <see langword="null"/>.</exception>
-        </member>
-        <member name="M:RogueLibsCore.HookExtensions.GetHook``1(Trait)">
-            <summary>
-              <para>Returns a hook attached to the current <paramref name="instance"/>, that is assignable to a variable of <typeparamref name="THook"/> type.</para>
-            </summary>
-            <typeparam name="THook">The type of a hook to search for.</typeparam>
-            <param name="instance">The instance of a hookable type.</param>
-            <returns>The hook that is assignable to a variable of <typeparamref name="THook"/> type, if found; otherwise, <see langword="default"/>.</returns>
-            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> is <see langword="null"/>.</exception>
-        </member>
-        <member name="M:RogueLibsCore.HookExtensions.GetHook(Unlock)">
-            <summary>
-              <para>Returns the <see cref="T:RogueLibsCore.UnlockWrapper"/> attached to the current <paramref name="instance"/>.</para>
-            </summary>
-            <param name="instance">The instance of a hookable type.</param>
-            <returns>The attached <see cref="T:RogueLibsCore.UnlockWrapper"/> hook, if found; otherwise, <see langword="null"/>.</returns>
-            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> is <see langword="null"/>.</exception>
-        </member>
-        <member name="M:RogueLibsCore.HookExtensions.GetHook``1(Unlock)">
-            <summary>
-              <para>Returns a hook attached to the current <paramref name="instance"/>, that is assignable to a variable of <typeparamref name="THook"/> type.</para>
-            </summary>
-            <typeparam name="THook">The type of a hook to search for.</typeparam>
-            <param name="instance">The instance of a hookable type.</param>
-            <returns>The hook that is assignable to a variable of <typeparamref name="THook"/> type, if found; otherwise, <see langword="default"/>.</returns>
-            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> is <see langword="null"/>.</exception>
-        </member>
-        <member name="M:RogueLibsCore.HookExtensions.GetOrAddHook``1(InvItem)">
-            <summary>
-              <para>Returns a hook attached to the current instance, that is assignable to a variable of the <typeparamref name="THook"/> type, or creates one if it doesn't exist.</para>
-            </summary>
-            <typeparam name="THook">The type of a hook to search for.</typeparam>
-            <param name="instance">The instance of a hookable type.</param>
-            <returns>The hook that is assignable to a variable of <typeparamref name="THook"/> type, if found; otherwise, <see langword="default"/>.</returns>
-            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> is <see langword="null"/>.</exception>
-        </member>
-        <member name="M:RogueLibsCore.HookExtensions.GetOrAddHook``1(PlayfieldObject)">
-            <summary>
-              <para>Returns a hook attached to the current instance, that is assignable to a variable of the <typeparamref name="THook"/> type, or creates one if it doesn't exist.</para>
-            </summary>
-            <typeparam name="THook">The type of a hook to search for.</typeparam>
-            <param name="instance">The instance of a hookable type.</param>
-            <returns>The hook that is assignable to a variable of <typeparamref name="THook"/> type, if found; otherwise, <see langword="default"/>.</returns>
-            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> is <see langword="null"/>.</exception>
-        </member>
-        <member name="M:RogueLibsCore.HookExtensions.GetOrAddHook``1(StatusEffect)">
-            <summary>
-              <para>Returns a hook attached to the current instance, that is assignable to a variable of the <typeparamref name="THook"/> type, or creates one if it doesn't exist.</para>
-            </summary>
-            <typeparam name="THook">The type of a hook to search for.</typeparam>
-            <param name="instance">The instance of a hookable type.</param>
-            <returns>The hook that is assignable to a variable of <typeparamref name="THook"/> type, if found; otherwise, <see langword="default"/>.</returns>
-            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> is <see langword="null"/>.</exception>
-        </member>
-        <member name="M:RogueLibsCore.HookExtensions.GetOrAddHook``1(Trait)">
-            <summary>
-              <para>Returns a hook attached to the current instance, that is assignable to a variable of the <typeparamref name="THook"/> type, or creates one if it doesn't exist.</para>
-            </summary>
-            <typeparam name="THook">The type of a hook to search for.</typeparam>
-            <param name="instance">The instance of a hookable type.</param>
-            <returns>The hook that is assignable to a variable of <typeparamref name="THook"/> type, if found; otherwise, <see langword="default"/>.</returns>
-            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> is <see langword="null"/>.</exception>
-        </member>
-        <member name="M:RogueLibsCore.HookExtensions.HasHook``1(InvItem)">
-            <summary>
-              <para>Determines whether the current instance contains a hook, that is assignable to a variable of the <typeparamref name="THook"/> type.</para>
-            </summary>
-            <typeparam name="THook">The type of a hook to search for.</typeparam>
-            <param name="instance">The instance of a hookable type.</param>
-            <returns><see langword="true"/>, if the current instance contains a hook, that is assignable to a variable of the <typeparamref name="THook"/> type; otherwise, <see langword="false"/>.</returns>
-        </member>
-        <member name="M:RogueLibsCore.HookExtensions.HasHook``1(PlayfieldObject)">
-            <summary>
-              <para>Determines whether the current instance contains a hook, that is assignable to a variable of the <typeparamref name="THook"/> type.</para>
-            </summary>
-            <typeparam name="THook">The type of a hook to search for.</typeparam>
-            <param name="instance">The instance of a hookable type.</param>
-            <returns><see langword="true"/>, if the current instance contains a hook, that is assignable to a variable of the <typeparamref name="THook"/> type; otherwise, <see langword="false"/>.</returns>
-        </member>
-        <member name="M:RogueLibsCore.HookExtensions.HasHook``1(StatusEffect)">
-            <summary>
-              <para>Determines whether the current instance contains a hook, that is assignable to a variable of the <typeparamref name="THook"/> type.</para>
-            </summary>
-            <typeparam name="THook">The type of a hook to search for.</typeparam>
-            <param name="instance">The instance of a hookable type.</param>
-            <returns><see langword="true"/>, if the current instance contains a hook, that is assignable to a variable of the <typeparamref name="THook"/> type; otherwise, <see langword="false"/>.</returns>
-        </member>
-        <member name="M:RogueLibsCore.HookExtensions.HasHook``1(Trait)">
-            <summary>
-              <para>Determines whether the current instance contains a hook, that is assignable to a variable of the <typeparamref name="THook"/> type.</para>
-            </summary>
-            <typeparam name="THook">The type of a hook to search for.</typeparam>
-            <param name="instance">The instance of a hookable type.</param>
-            <returns><see langword="true"/>, if the current instance contains a hook, that is assignable to a variable of the <typeparamref name="THook"/> type; otherwise, <see langword="false"/>.</returns>
-        </member>
-        <member name="M:RogueLibsCore.HookExtensions.GetHooks``1(InvItem)">
-            <summary>
-              <para>Returns an enumerable collection of all hooks attached to the current <paramref name="instance"/>, that are assignable to a variable of <typeparamref name="THook"/> type.</para>
-            </summary>
-            <typeparam name="THook">The type of the hooks to search for.</typeparam>
-            <param name="instance">The instance of a hookable type.</param>
-            <returns>An enumerable collection of hooks attached to the current <paramref name="instance"/>, that are assignable to a variable of <typeparamref name="THook"/> type.</returns>
-            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> is <see langword="null"/>.</exception>
-        </member>
-        <member name="M:RogueLibsCore.HookExtensions.GetHooks``1(PlayfieldObject)">
-            <summary>
-              <para>Returns an enumerable collection of all hooks attached to the current <paramref name="instance"/>, that are assignable to a variable of <typeparamref name="THook"/> type.</para>
-            </summary>
-            <typeparam name="THook">The type of the hooks to search for.</typeparam>
-            <param name="instance">The instance of a hookable type.</param>
-            <returns>An enumerable collection of hooks attached to the current <paramref name="instance"/>, that are assignable to a variable of <typeparamref name="THook"/> type.</returns>
-            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> is <see langword="null"/>.</exception>
-        </member>
-        <member name="M:RogueLibsCore.HookExtensions.GetHooks``1(StatusEffect)">
-            <summary>
-              <para>Returns an enumerable collection of all hooks attached to the current <paramref name="instance"/>, that are assignable to a variable of <typeparamref name="THook"/> type.</para>
-            </summary>
-            <typeparam name="THook">The type of the hooks to search for.</typeparam>
-            <param name="instance">The instance of a hookable type.</param>
-            <returns>An enumerable collection of hooks attached to the current <paramref name="instance"/>, that are assignable to a variable of <typeparamref name="THook"/> type.</returns>
-            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> is <see langword="null"/>.</exception>
-        </member>
-        <member name="M:RogueLibsCore.HookExtensions.GetHooks``1(Trait)">
-            <summary>
-              <para>Returns an enumerable collection of all hooks attached to the current <paramref name="instance"/>, that are assignable to a variable of <typeparamref name="THook"/> type.</para>
-            </summary>
-            <typeparam name="THook">The type of the hooks to search for.</typeparam>
-            <param name="instance">The instance of a hookable type.</param>
-            <returns>An enumerable collection of hooks attached to the current <paramref name="instance"/>, that are assignable to a variable of <typeparamref name="THook"/> type.</returns>
-            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> is <see langword="null"/>.</exception>
-        </member>
-        <member name="M:RogueLibsCore.HookExtensions.GetStatusEffects(StatusEffect)">
-            <summary>
-              <para>Returns the <see cref="T:StatusEffects"/> instance containing the current <paramref name="statusEffect"/>.</para>
-            </summary>
-            <param name="statusEffect">The current instance of <see cref="T:StatusEffect"/>.</param>
-            <returns>The <see cref="T:StatusEffects"/> instance containing the current <paramref name="statusEffect"/>.</returns>
-            <exception cref="T:System.ArgumentNullException"><paramref name="statusEffect"/> is <see langword="null"/>.</exception>
-        </member>
-        <member name="M:RogueLibsCore.HookExtensions.GetStatusEffects(Trait)">
-            <summary>
-              <para>Returns the <see cref="T:StatusEffects"/> instance containing the current <paramref name="trait"/>.</para>
-            </summary>
-            <param name="trait">The current instance of <see cref="T:Trait"/>.</param>
-            <returns>The <see cref="T:StatusEffects"/> instance containing the current <paramref name="trait"/>.</returns>
-            <exception cref="T:System.ArgumentNullException"><paramref name="trait"/> is <see langword="null"/>.</exception>
         </member>
         <member name="T:RogueLibsCore.PatchRecord">
             <summary>
@@ -5646,6 +5933,7 @@
             <returns>The added item, if found in the inventory; otherwise, <see langword="null"/>.</returns>
             <exception cref="T:System.ArgumentNullException"><paramref name="inventory"/> is <see langword="null"/>.</exception>
             <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="amount"/> is less than or equal to 0.</exception>
+            <exception cref="T:System.ArgumentException"><paramref name="itemType"/> is not a <see cref="T:RogueLibsCore.CustomItem"/>.</exception>
         </member>
         <member name="M:RogueLibsCore.RogueExtensions.GetItem(InvDatabase,System.Type)">
             <summary>
@@ -5727,6 +6015,7 @@
             <param name="abilityType">Type of the ability to give to the <paramref name="agent"/>.</param>
             <returns>The given ability.</returns>
             <exception cref="T:System.ArgumentNullException"><paramref name="agent"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentException"><paramref name="abilityType"/> is not a <see cref="T:RogueLibsCore.CustomAbility"/>.</exception>
         </member>
         <member name="M:RogueLibsCore.RogueExtensions.GetAbility(Agent,System.Type)">
             <summary>
@@ -5790,6 +6079,7 @@
             <param name="traitType">The type of the trait to add to the <paramref name="agent"/>.</param>
             <returns>The added trait, if found on the character; otherwise, <see langword="null"/>.</returns>
             <exception cref="T:System.ArgumentNullException"><paramref name="agent"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentException"><paramref name="traitType"/> is not a <see cref="T:RogueLibsCore.CustomTrait"/>.</exception>
         </member>
         <member name="M:RogueLibsCore.RogueExtensions.GetTrait(Agent,System.Type)">
             <summary>
@@ -5904,6 +6194,7 @@
             <param name="info">The struct containing effect initialization info.</param>
             <returns>The added effect, if found on the character; otherwise, <see langword="null"/>.</returns>
             <exception cref="T:System.ArgumentNullException"><paramref name="agent"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentException"><paramref name="effectType"/> is not a <see cref="T:RogueLibsCore.CustomEffect"/>.</exception>
         </member>
         <member name="M:RogueLibsCore.RogueExtensions.GetEffect``1(Agent)">
             <summary>
@@ -6197,11 +6488,6 @@
               <para>Various utility methods and fields.</para>
             </summary>
         </member>
-        <member name="F:RogueLibsCore.RogueUtilities.Empty">
-            <summary>
-              <para>The empty read-only string collection.</para>
-            </summary>
-        </member>
         <member name="M:RogueLibsCore.RogueUtilities.MakeTextureReadable(UnityEngine.Texture2D)">
             <summary>
               <para>Creates a readable copy of the specified <paramref name="texture"/>.</para>
@@ -6231,6 +6517,17 @@
             <exception cref="T:System.ArgumentNullException"><paramref name="rawData"/> is <see langword="null"/>.</exception>
             <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="ppu"/> is less than or equal to 0.</exception>
         </member>
+        <member name="M:RogueLibsCore.RogueUtilities.ConvertToSprite(System.Byte[],System.Nullable{UnityEngine.Rect},System.Single)">
+            <summary>
+              <para>Creates a <see cref="T:UnityEngine.Sprite"/> with a texture from <paramref name="rawData"/> with the specified <paramref name="ppu"/>.</para>
+            </summary>
+            <param name="rawData">The byte array containing a raw PNG- or JPEG-encoded image.</param>
+            <param name="region">The region of the texture for the sprite to use, or <see langword="null"/> to use the entire texture.</param>
+            <param name="ppu">The pixels-per-unit of the custom sprite's texture.</param>
+            <returns>The created sprite.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="rawData"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="ppu"/> is less than or equal to 0.</exception>
+        </member>
         <member name="M:RogueLibsCore.RogueUtilities.ConvertToSprite(System.String,System.Single)">
             <summary>
               <para>Creates a <see cref="T:UnityEngine.Sprite"/> with a texture created from a file at the specified <paramref name="filePath"/> with the specified <paramref name="ppu"/>.</para>
@@ -6252,22 +6549,16 @@
             <exception cref="T:System.IO.FileNotFoundException">A file at the specified <paramref name="filePath"/> does not exist.</exception>
             <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="ppu"/> is less than or equal to 0.</exception>
         </member>
-        <member name="M:RogueLibsCore.RogueUtilities.ConvertToAudioClip(System.String)">
+        <member name="M:RogueLibsCore.RogueUtilities.ConvertToSprite(System.String,System.Nullable{UnityEngine.Rect},System.Single)">
             <summary>
-              <para>Converts an audio file from the specified <paramref name="filePath"/> into an <see cref="T:UnityEngine.AudioClip"/>. Detects the audio format by the file's extension.</para>
-              <para>Supported audio formats: MP3 (.mp3), WAV (.wav, .wave) and Ogg (.ogg, .spx, .opus, .og_).</para>
+              <para>Creates a <see cref="T:UnityEngine.Sprite"/> with a texture created from a file at the specified <paramref name="filePath"/> with the specified <paramref name="ppu"/>.</para>
             </summary>
-            <param name="filePath">Path to the MP3-, WAV- or Ogg-encoded audio file.</param>
-            <returns>Created <see cref="T:UnityEngine.AudioClip"/>.</returns>
-            <exception cref="T:System.ArgumentException"><paramref name="filePath"/> is an empty string or contains one or more invalid characters.</exception>
-            <exception cref="T:System.ArgumentNullException"><paramref name="filePath"/> is <see langword="null"/>.</exception>
-            <exception cref="T:System.IO.PathTooLongException"><paramref name="filePath"/> exceeds the system-defined maximum length.</exception>
-            <exception cref="T:System.IO.DirectoryNotFoundException"><paramref name="filePath"/> is invalid.</exception>
-            <exception cref="T:System.IO.IOException">An I/O error occurred while opening the file.</exception>
-            <exception cref="T:System.UnauthorizedAccessException"><paramref name="filePath"/> specifies a directory or the caller does not have the required permission.</exception>
-            <exception cref="T:System.IO.FileNotFoundException">File specified in <paramref name="filePath"/> was not found.</exception>
-            <exception cref="T:System.NotSupportedException"><paramref name="filePath"/> is in invalid format or the extension's format is not supported.</exception>
-            <exception cref="T:System.Security.SecurityException">The caller does not have the required permission.</exception>
+            <param name="filePath">The path to the PNG- or JPEG-encoded image file.</param>
+            <param name="region">The region of the texture for the sprite to use, or <see langword="null"/> to use the entire texture.</param>
+            <param name="ppu">The pixels-per-unit of the custom sprite's texture.</param>
+            <returns>The created sprite.</returns>
+            <exception cref="T:System.IO.FileNotFoundException">A file at the specified <paramref name="filePath"/> does not exist.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="ppu"/> is less than or equal to 0.</exception>
         </member>
         <member name="M:RogueLibsCore.RogueUtilities.ConvertToAudioClip(System.Byte[],UnityEngine.AudioType)">
             <summary>
@@ -6300,6 +6591,36 @@
             <exception cref="T:System.NotSupportedException"><paramref name="filePath"/> is in invalid format or the specified <paramref name="format"/> is not supported.</exception>
             <exception cref="T:System.Security.SecurityException">The caller does not have the required permission.</exception>
         </member>
+        <member name="M:RogueLibsCore.RogueUtilities.ConvertToAudioClip(System.Byte[])">
+            <summary>
+              <para>Converts the specified <paramref name="rawData"/> into an <see cref="T:UnityEngine.AudioClip"/>. Automatically detects the audio format.</para>
+              <para>Supported audio formats: MP3 (.mp3), WAV (.wav, .wave) and Ogg (.ogg, .spx, .opus, .og_).</para>
+            </summary>
+            <param name="rawData">MP3-, WAV- or Ogg-encoded audio data.</param>
+            <returns>Created <see cref="T:UnityEngine.AudioClip"/>.</returns>
+            <exception cref="T:System.IO.IOException">An I/O error occurred while opening the file.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">The caller does not have the required permission.</exception>
+            <exception cref="T:System.NotSupportedException">The audio format could not be identified.</exception>
+            <exception cref="T:System.Security.SecurityException">The caller does not have the required permission.</exception>
+        </member>
+        <member name="M:RogueLibsCore.RogueUtilities.ConvertToAudioClip(System.String)">
+            <summary>
+              <para>Converts an audio file from the specified <paramref name="filePath"/> into an <see cref="T:UnityEngine.AudioClip"/>. Automatically detects the audio format.</para>
+              <para>Supported audio formats: MP3 (.mp3), WAV (.wav, .wave) and Ogg (.ogg, .spx, .opus, .og_).</para>
+            </summary>
+            <param name="filePath">Path to the MP3-, WAV- or Ogg-encoded audio file.</param>
+            <returns>Created <see cref="T:UnityEngine.AudioClip"/>.</returns>
+            <exception cref="T:System.ArgumentException"><paramref name="filePath"/> is an empty string or contains one or more invalid characters.</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="filePath"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.IO.PathTooLongException"><paramref name="filePath"/> exceeds the system-defined maximum length.</exception>
+            <exception cref="T:System.IO.DirectoryNotFoundException"><paramref name="filePath"/> is invalid.</exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurred while opening the file.</exception>
+            <exception cref="T:System.UnauthorizedAccessException"><paramref name="filePath"/> specifies a directory or the caller does not have the required permission.</exception>
+            <exception cref="T:System.IO.FileNotFoundException">File specified in <paramref name="filePath"/> was not found.</exception>
+            <exception cref="T:System.NotSupportedException">The audio format could not be identified.</exception>
+            <exception cref="T:System.NotSupportedException"><paramref name="filePath"/> is in invalid format or the audio format could not be identified.</exception>
+            <exception cref="T:System.Security.SecurityException">The caller does not have the required permission.</exception>
+        </member>
         <member name="M:RogueLibsCore.RogueUtilities.GetInterfaceMethod(System.Type,System.Type,System.String)">
             <summary>
               <para>Returns the <paramref name="interfaceType"/>'s <paramref name="methodName"/> implemented by the specified <paramref name="type"/>.</para>
@@ -6317,21 +6638,6 @@
             <param name="interfaceType">The type of the interface with the methods.</param>
             <param name="methodNames">The names of the interface's method.</param>
             <returns>An array of <see cref="T:System.Reflection.MethodInfo"/>s of the implemented methods, if found; otherwise, <see langword="null"/>.</returns>
-        </member>
-        <member name="T:RogueLibsCore.VersionText">
-            <summary>
-              <para>Represents a version text displayed in the bottom-left corner of the screen. Does not necessarily display a version.</para>
-            </summary>
-        </member>
-        <member name="P:RogueLibsCore.VersionText.Id">
-            <summary>
-              <para>Gets the version text's unique identifier.</para>
-            </summary>
-        </member>
-        <member name="P:RogueLibsCore.VersionText.Text">
-            <summary>
-              <para>Gets or sets the text displayed by the version text.</para>
-            </summary>
         </member>
     </members>
 </doc>

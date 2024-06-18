@@ -55,12 +55,12 @@ namespace SORCE.Patches.P_PlayfieldObject
 					InteractionModel<Toilet> model = h.Model;
 					Agent agent = h.Agent;
 
-					model.CancelCallback = () =>
-					{
-						agent.SayDialogue(CDialogue.ToiletDisgusting);
-					};
+					h.SetStopCallback((_) =>
+                    {
+                        agent.SayDialogue(CDialogue.ToiletDisgusting);
+                    });
 
-					h.StopInteraction();
+					h.Model.StopInteraction();
 				}
 				else
 				{

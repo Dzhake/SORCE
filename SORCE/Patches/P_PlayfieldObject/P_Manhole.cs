@@ -51,7 +51,7 @@ namespace SORCE.Patches.P_PlayfieldObject
                     else
                     {
 						h.Agent.SayDialogue(CDialogue.ManholeNoExits);
-						h.StopInteraction();
+						h.Model.StopInteraction();
 					}
 				}
 				else

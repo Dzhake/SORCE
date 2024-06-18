@@ -337,12 +337,9 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>set modDir="C:\Program Files (x86)\Steam\steamapps\common\Streets of Rogue\BepInEx\plugins"
+    <PostBuildEvent>set modDir="N:\Games\Streets of Rogue\BepInEx\plugins"
 copy /y "SORCE.dll" %25modDir%25
 copy /y "BTHarmonyUtils.dll" %25modDir%25
-copy /y "RogueLibsCore.dll" %25modDir%25 
-
-set exe="C:\Program Files (x86)\Steam\steamapps\common\Streets of Rogue\StreetsOfRogue.exe"
-if exist %25exe%25 (Start "" %25exe%25)</PostBuildEvent>
+copy /y "RogueLibsCore.dll" %25modDir%25</PostBuildEvent>
   </PropertyGroup>
 </Project>
